@@ -14,6 +14,16 @@
   background-size: cover;
 }
 
+.header-container h3 {
+  position: absolute;
+  left: 16vw;
+  margin: 0;
+  padding-top: 2rem;
+  padding-left: 3rem;
+  color: white;
+  font-weight: bold;
+}
+
 /* SIDENAV  *******************************************************/
 
 .sidenav-container {
@@ -60,5 +70,43 @@
   left: 16vw;
   width: 84vw;
   min-height: 80vh;
-  background-color: lightgrey;
+  background-color: rgb(245,245,245);
+}
+
+/* PROJECT CARD ***************************************************/
+
+.projectcard-container {
+  margin: 1rem;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.projectcard-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.projectcard-title h4 {
+  padding: 0 1rem;
+}
+
+.projectcard-title button {
+  background-color: rgba(110, 104, 242, 1);
+  color: white;
+  font-weight: bold;
+  padding: 0 1rem;
+  margin: 1rem;
+  border: 1px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.projectcard-title button:hover {
+  background-color: white;
+  color: rgba(110, 104, 242, 1);
+  font-weight: bold;
+  border: 2px solid rgba(110, 104, 242, 1);
+  transition: ease-in-out 0.2s;
 }
