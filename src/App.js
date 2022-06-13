@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react'
+// import { useState, useEffect } from 'react'
 
 import './App.css'
-import data from './data/fakedata.json'
+// import data from './data/fakedata.json'
 // to be used when the backend is established
 //import BACKEND_API from '.data/data'
 import SideNav from './components/SideNav'
@@ -11,12 +11,12 @@ import Main from './components/Main'
 
 function App() {
   
-  const [issues, setIssues] = useState([])
+  // const [issues, setIssues] = useState([])
   
-  // will need to change to BACKEND_API when ready
-  useEffect(() => {
-    setIssues(data)
-  }, [])
+  // // will need to change to BACKEND_API when ready
+  // useEffect(() => {
+  //   setIssues(data)
+  // }, [])
   
   return (
     <div className="App">
