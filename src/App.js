@@ -4,7 +4,8 @@ import './App.css'
 import data from './data/fakedata.json'
 // to be used when the backend is established
 //import BACKEND_API from '.data/data'
-import Card from './Card'
+import Card from './components/Card'
+import SideNav from './components/SideNav'
 
 function App() {
   
@@ -17,6 +18,7 @@ function App() {
   
   return (
     <div className="App">
+      <SideNav />
       {
         issues.map((el) => (
           <Card

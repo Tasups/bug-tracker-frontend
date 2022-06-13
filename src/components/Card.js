@@ -3,8 +3,8 @@ import React from 'react';
 const Card = (props) => {
   return(
     <div>
-      <h1>Title: {props.issueTitle}</h1>
-      <p>Description: {props.description}</p>
+      <h1>{props.issueTitle}</h1>
+      <p>{props.description}</p>
     </div>
     )
 }

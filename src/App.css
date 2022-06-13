@@ -2,37 +2,37 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* SIDENAV  *******************************************************/
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.sidenav-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-left: 0;
+  margin-right: auto;
+  height: 100vh;
+  min-width: 10rem;
+  max-width: 12rem;
+  background-color: lightgrey;
 }
 
-.App-link {
-  color: #61dafb;
+.sidenav-icon {
+  color: blue;
+  margin: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sidenav-icon h3 {
+  margin-top: 0;
+}
+
+.sidenav-menu ul {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+  padding: 0;
+  text-align: left;
+}
+
+.sidenav-menu li {
+  list-style: none;
+  margin-bottom: 1rem;
 }
