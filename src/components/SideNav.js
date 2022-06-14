@@ -3,7 +3,7 @@ import BugReportIcon from '@mui/icons-material/BugReport';
 
 const SideNav = () => {
   return(
-    <div className="sidenav-container">
+    <nav className="sidenav-container">
       <div className="sidenav-icon">
         <BugReportIcon sx={{ fontSize: "3rem" }}/>
         <h3>Bug Bank</h3>
@@ -18,7 +18,7 @@ const SideNav = () => {
       <div className="sidenav-button">
           <button>Log Out</button>
       </div>
-    </div>
+    </nav>
     )
 }
 

@@ -6,8 +6,8 @@ import './App.css'
 //import BACKEND_API from '.data/data'
 import SideNav from './components/SideNav'
 import Header from './components/Header'
-import Main from './components/Main'
-//import Card from './components/Card'
+import Dashboard from './components/Dashboard'
+
 
 function App() {
   
@@ -22,7 +22,7 @@ function App() {
     <div className="App">
       <Header />
       <SideNav />
-      <Main />
+      <Dashboard />
       {/*
         {
         issues.map((el) => (

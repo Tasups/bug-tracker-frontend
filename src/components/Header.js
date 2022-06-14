@@ -2,9 +2,9 @@ import React from 'react';
 
 const Header = () => {
   return(
-    <div className="header-container">
+    <header className="header-container">
       <h3>Dashboard - userName</h3>
-    </div>
+    </header>
     )
 }
 
