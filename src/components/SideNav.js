@@ -15,6 +15,9 @@ const SideNav = () => {
           <li>Administration</li>
         </ul>
       </div>
+      <div className="sidenav-button">
+          <button>Log Out</button>
+      </div>
     </div>
     )
 }
