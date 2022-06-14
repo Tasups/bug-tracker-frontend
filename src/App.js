@@ -6,7 +6,7 @@ import './App.css'
 //import BACKEND_API from '.data/data'
 import SideNav from './components/SideNav'
 import Header from './components/Header'
-import Dashboard from './components/Dashboard'
+import Dashboard from './components/dashboard/Dashboard'
 
 
 function App() {

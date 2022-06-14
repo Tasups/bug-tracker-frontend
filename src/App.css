@@ -174,8 +174,11 @@
 
 .tix-card {
   background-color: white;
+  display: flex;
+  flex-direction: column;
   min-width: 18rem;
   min-heigth: 16rem;
+  max-height: 24rem;
   border: 3px solid white;
   border-radius: 5px;
   -webkit-box-shadow: 5px 5px 15px 3px rgba(0,0,0,0.36); 
@@ -188,12 +191,18 @@
   font-weight: 600;
 }
 
-.tix-graph {
-  display: flex;
-  justify-content: space-around;
+.tix-graph svg{
+  max-height: 12rem;
+  margin-bottom: auto;
 }
 
-.tix-card img {
-  width: 8rem;
-  margin: 2rem;
+.tix-card-color-legend {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0 0 1rem;
+}
+
+.tix-card-color-legend p {
+  margin: 0.25rem;
+  padding-bottom: 0;
 }
