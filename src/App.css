@@ -76,10 +76,12 @@
 /* PROJECT CARD ***************************************************/
 
 .projectcard-container {
-  margin: 1rem;
+  margin: 1rem 2rem;
   background-color: white;
   border: 1px solid white;
   border-radius: 5px;
+  -webkit-box-shadow: 5px 5px 15px 3px rgba(0,0,0,0.36); 
+  box-shadow: 5px 5px 15px 3px rgba(0,0,0,0.36);
 }
 
 .projectcard-title {
@@ -92,7 +94,7 @@
 }
 
 .projectcard-title button {
-  background-color: rgba(110, 104, 242, 1);
+  background-color: rgba(36,27,242, 1);
   color: white;
   font-weight: bold;
   padding: 0 1rem;
@@ -100,13 +102,43 @@
   border: 1px solid white;
   border-radius: 5px;
   cursor: pointer;
+  transition: 0.2s ease-in-out;
 }
-
 
 .projectcard-title button:hover {
   background-color: white;
-  color: rgba(110, 104, 242, 1);
+  color: rgba(36,27,242, 1);
   font-weight: bold;
-  border: 2px solid rgba(110, 104, 242, 1);
-  transition: ease-in-out 0.2s;
+  border: 2px solid rgba(36,27,242, 1);
+  transition: 0.3s ease-in-out;
+}
+
+.projectcard-table table {
+  margin: 0.4rem auto;
+  text-align: center;
+  border-collapse: collapse;
+  font-size: 0.9em;
+  min-width: 80vw;
+}
+
+.projectcard-table th {
+  text-align: left;
+  background-color: rgba(36,27,242, 0.15);
+  font-weight: bold;
+}
+
+.projectcard-table td {
+  text-align: left;
+}
+
+.projectcard-table th, .projectcard-table td {
+  padding: 0.5rem 0.5rem;
+}
+
+.projectcard-table tr {
+  border-bottom: 1px solid rgba(230, 230, 230, 1);
+}
+
+.projectcard-table tr:last-of-type {
+  border-bottom: 4px solid rgba(36,27,242, 0.15);
 }
