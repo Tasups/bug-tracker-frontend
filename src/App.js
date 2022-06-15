@@ -1,4 +1,3 @@
-// import { useState, useEffect } from 'react'
 
 import './App.css'
 // import data from './data/fakedata.json'
@@ -10,8 +9,6 @@ import Dashboard from './components/dashboard/Dashboard'
 
 
 function App() {
-  
-  // const [issues, setIssues] = useState([])
   
   // // will need to change to BACKEND_API when ready
   // useEffect(() => {

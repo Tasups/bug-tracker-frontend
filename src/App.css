@@ -83,7 +83,7 @@
 /*  font-weight: bold;*/
 /*}*/
 
-/* MAIN ***********************************************************/
+/* DASHBOARD ******************************************************/
 
 .dashboard-container {
   position: absolute;
@@ -98,6 +98,86 @@
   justify-content: space-around;
   width: 100%;
   margin: 2rem auto;
+}
+
+.dashboard-project-modal {
+  position: absolute;
+  background-color: rgba(110, 104, 242, 1);
+  z-index: 10;
+  min-height: 20rem;
+  width: 40%;
+  border: 3px solid rgba(110, 104, 242, 1);
+  border-radius: 10px;
+  left: 0;
+  right: 0;
+  margin: 5rem auto;
+}
+
+.dashboard-project-modal h2 {
+  color: white;
+  font-weight: bold;
+  margin: 1rem;
+  text-align: center;
+}
+
+.dashboard-project-modal form {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 3rem;
+}
+
+.dashboard-project-modal label {
+  color: white;
+  font-weight: bold;
+}
+
+.dashboard-project-modal input[type=text], select {
+  width: 100%;
+  padding: 0.5rem 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.dashboard-project-modal input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dashboard-project-modal input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.dashboard-project-modal input:last-of-type {
+  margin-bottom: 2rem;
+}
+
+.dashboard-project-modal button {
+  margin: 0.25rem;
+  padding: 0.25rem;
+}
+
+.cancel-modal {
+  background-color: #EE2604;
+  border: solid 3px #EE2604;
+  color: white;
+}
+
+.cancel-modal:hover {
+  background-color: #e85f48;
+  border: solid 3px #e85f48;
+}
+
+.grayed-out {
+  opacity: 0.2;
 }
 
 /* PROJECT CARD ***************************************************/
