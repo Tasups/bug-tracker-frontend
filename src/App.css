@@ -176,8 +176,14 @@
   border: solid 3px #e85f48;
 }
 
+.normal-opacity {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
 .grayed-out {
   opacity: 0.2;
+  transition: opacity 0.4s;
 }
 
 /* PROJECT CARD ***************************************************/

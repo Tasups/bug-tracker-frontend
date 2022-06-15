@@ -1,10 +1,12 @@
 
-const ProjectCard = () => {
+const ProjectCard = (props) => {
   return (
     <section className="projectcard-container">
       <div className="projectcard-title">
         <h4>Projects</h4>
-        <button>New Project</button>
+        <button onClick={props.handleClick}>
+          New Project
+        </button>
       </div>
       <div className="projectcard-table">
         <table>

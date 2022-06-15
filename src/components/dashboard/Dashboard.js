@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import DataContext from '../../context/DataContext'
 
 import ProjectCard from './ProjectCard'
 import TixByPriority from './TixByPriority'
@@ -7,15 +8,21 @@ import TixByStatus from './TixByStatus'
 
 const Dashboard = () => {
   
+  // can useContext to import data from db
+  // const [ data, setData ] = useContext(DataContext);
+  
   const [ open, setOpen ] = useState(true);
   
-  const handleClick = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    //setData to something
     setOpen(false)
   }
   
-  // const [check, setCheck] = useState(false);
-  // ...
-  // setCheck(prevCheck => !prevCheck);
+  const toggleAddProjectModal = () => {
+    setOpen(prev => !prev);
+  }
+  
   
   return(
     <main className="dashboard-container">
@@ -23,7 +30,7 @@ const Dashboard = () => {
       { open &&
         <section className="dashboard-project-modal">
           <h2>Add A New Project</h2>
-          <form>
+          <form onSubmit={handleSubmit}>
             <label for="projectname">Project Name: </label>
             <input type="text" id="projectname" name="projectname" value="project" />
             
@@ -33,14 +40,17 @@ const Dashboard = () => {
             <label for="contributors">Contributors: </label>
             <input type="text" id="contributors" name="contributors" value="contributors" />
             <button type="submit">Submit</button>
-            <button className="cancel-modal" onClick={handleClick}>Cancel</button>
+            <button className="cancel-modal" onClick={toggleAddProjectModal}>Cancel</button>
           </form>
           
         </section>
+        
+      //   className={isActive ? 'your_className': null} 
+      // onClick={toggleClass} 
       }
       <div className={open && "grayed-out"}>
         <ProjectCard 
-          
+          handleClick={toggleAddProjectModal}
         />
         <div className="dashboard-card-container">
           <TixByPriority />
