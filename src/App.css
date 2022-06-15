@@ -1,6 +1,5 @@
 
 
-
 /* HEADER *********************************************************/
 
 .header-container {
@@ -76,12 +75,13 @@
   transition: 0.2s ease-in-out;
 }
 
-.sidenav-button button:hover {
-  background-color: white;
-  color: #EE2604;
-  transition: 0.3s ease-in-out;
-  font-weight: bold;
-}
+/* no longer the latest fashion
+/*.sidenav-button button:hover {*/
+/*  background-color: white;*/
+/*  color: #EE2604;*/
+/*  transition: 0.3s ease-in-out;*/
+/*  font-weight: bold;*/
+/*}*/
 
 /* MAIN ***********************************************************/
 
@@ -132,13 +132,14 @@
   transition: 0.2s ease-in-out;
 }
 
-.projectcard-title button:hover {
-  background-color: white;
-  color: rgba(36,27,242, 1);
-  font-weight: bold;
-  border: 2px solid rgba(36,27,242, 1);
-  transition: 0.3s ease-in-out;
-}
+/* no longer the latest fashion
+/*.projectcard-title button:hover {*/
+/*  background-color: white;*/
+/*  color: rgba(36,27,242, 1);*/
+/*  font-weight: bold;*/
+/*  border: 2px solid rgba(36,27,242, 1);*/
+/*  transition: 0.3s ease-in-out;*/
+/*}*/
 
 .projectcard-table table {
   margin: 0.4rem auto;
@@ -176,6 +177,7 @@
   background-color: white;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   min-width: 18rem;
   min-heigth: 16rem;
   max-height: 24rem;
@@ -191,12 +193,8 @@
   font-weight: 600;
 }
 
-.tix-graph svg{
-  max-height: 12rem;
-  margin-bottom: auto;
-}
-
 .tix-card-color-legend {
+  flex: 1;
   display: flex;
   flex-direction: column;
   margin: 1rem 0 0 1rem;
@@ -204,5 +202,9 @@
 
 .tix-card-color-legend p {
   margin: 0.25rem;
-  padding-bottom: 0;
+}
+
+.tix-graph svg {
+  max-height: 12rem;
+  margin-bottom: auto;
 }
