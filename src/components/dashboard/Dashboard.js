@@ -11,7 +11,7 @@ const Dashboard = () => {
   // can useContext to import data from db
   // const [ data, setData ] = useContext(DataContext);
   
-  const [ open, setOpen ] = useState(true);
+  const [ open, setOpen ] = useState(false);
   
   const handleSubmit = (e) => {
     e.preventDefault()
