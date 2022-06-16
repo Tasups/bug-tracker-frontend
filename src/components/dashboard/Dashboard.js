@@ -58,7 +58,7 @@ const Dashboard = () => {
       {open && (
         <section className="dashboard-project-modal">
           <h2>Add A New Project</h2>
-          <form onSubmit={addNewProject}>
+          <form onSubmit={addNewProject} autoComplete="off">
             <label htmlFor="projectname">Project Name: </label>
             <input
               type="text"
