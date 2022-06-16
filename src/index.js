@@ -1,15 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { DataProvider } from './context/DataContext';
 
+import Dashboard from './components/dashboard/Dashboard'
+import ProjectBoard from './components/projectBoard/ProjectBoard'
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <DataProvider>
-      <App />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/projectboard" element={<ProjectBoard />} />
+        </Routes>
+      </BrowserRouter>
     </DataProvider>
   </React.StrictMode>
 );
