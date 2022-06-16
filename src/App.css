@@ -138,20 +138,7 @@
   box-sizing: border-box;
 }
 
-.dashboard-project-modal input[type=submit] {
-  width: 100%;
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
 
-.dashboard-project-modal input[type=submit]:hover {
-  background-color: #45a049;
-}
 
 .dashboard-project-modal input:last-of-type {
   margin-bottom: 2rem;
@@ -255,7 +242,7 @@
   flex-direction: column;
   justify-content: space-between;
   min-width: 18rem;
-  min-heigth: 16rem;
+  min-height: 16rem;
   max-height: 24rem;
   border: 3px solid white;
   border-radius: 5px;

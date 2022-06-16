@@ -1,1 +1,0 @@
-MONGO_URI='this is where the uri goes'
