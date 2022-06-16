@@ -15,7 +15,7 @@ const ProjectCard = (props) => {
             <th>Description</th>
             <th>Contributors</th>
           </tr>
-          {props.projects.map((el) => (
+          {props.projects?.map((el) => (
             <tr key={el.projectTitle}>
               <td>{el.projectTitle}</td>
               <td>{el.description}</td>

@@ -1,5 +1,10 @@
 import { PieChart } from 'react-minimal-pie-chart';
 
+import yellow from '../../images/yellow.jpg'
+import orange from '../../images/orange.jpg'
+import blue from '../../images/blue.jpg'
+import pink from '../../images/pink.jpg'
+
 
 const TixByPriority = () => {
   
@@ -7,26 +12,26 @@ const TixByPriority = () => {
     <section className="tix-card">
       <h4>Tickets by Priority</h4>
       <div className="tix-card-color-legend">
-        <p style={{ color: "rgba(36,27,242, 1)", fontWeight: "bold" }}>
-          Critical
-        </p>
-        <p style={{ color: "rgba(36,27,242, 0.75)", fontWeight: "bold" }}>
-          Important
-        </p>
-        <p style={{ color: "rgba(36,27,242, 0.5)", fontWeight: "bold" }}>
-          Normal
-        </p>
-        <p style={{ color: "rgba(36,27,242, 0.25)", fontWeight: "bold" }}>
-          Low
-        </p>
+        <div>
+          <img src={yellow} alt="critical"/><p> - Critical</p>
+        </div>
+        <div>
+          <img src={pink} alt="important"/><p> - Important</p>
+        </div>
+        <div>
+          <img src={orange} alt="normal"/><p> - Normal</p>
+        </div>
+        <div>
+          <img src={blue} alt="low"/><p> - Low</p>
+        </div>
       </div>
       <div className="tix-graph">
         <PieChart
           data={[
-            { title: "Critical", value: 1, color: "rgba(36,27,242, 1)" },
-            { title: "Important", value: 1, color: "rgba(36,27,242, 0.75)" },
-            { title: "Normal", value: 2, color: "rgba(36,27,242, 0.5)" },
-            { title: "Low", value: 3, color: "rgba(36,27,242, 0.25)" },
+            { title: "Critical", value: 1, color: "#f28a1b" },
+            { title: "Important", value: 1, color: "#241bf2" },
+            { title: "Normal", value: 2, color: "#f21be7" },
+            { title: "Low", value: 3, color: "#e7f21b" },
           ]}
           radius={45}
           lineWidth={25}

@@ -1,5 +1,4 @@
 import { useState } from 'react'
-//you can useContext with the following as long as you import useContext first
 //import DataContext from '../../context/DataContext'
 
 import ProjectCard from './ProjectCard'
@@ -8,13 +7,12 @@ import TixByType from './TixByType'
 import TixByStatus from './TixByStatus'
 
 import { issues } from '../../data/fakedata';
- 
 
 const Dashboard = () => {
   
   // can useContext to import data from db
   // const [ data, setData ] = useContext(DataContext);
-
+  
   const [open, setOpen] = useState(false);
   const [projects, setProjects] = useState(issues);
   const [newProjectTitle, setNewProjectTitle] = useState("")
@@ -22,11 +20,7 @@ const Dashboard = () => {
   const [newContributors, setNewContributors] = useState("");
 
   const toggleAddProjectModal = () => {
-    setOpen((prev) => !prev);
-  };
-
-  const closeModal = () => {
-    setOpen(false)
+    setOpen(prev => !prev);
   }
 
   const projectChange = (e) => {
@@ -50,52 +44,74 @@ const Dashboard = () => {
       contributors: newContributors
     }
     setProjects([...projects, newProject])
-    closeModal()
+    toggleAddProjectModal()
   }
- 
-  return (
+  
+  const handleCancel = () => {
+    setNewProjectTitle("")
+    setNewDescription("")
+    setNewContributors("")
+    toggleAddProjectModal()
+  }
+  
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    addNewProject(e)
+  }
+  
+  return(
     <main className="dashboard-container">
-      {open && (
+    
+      { open &&
         <section className="dashboard-project-modal">
           <h2>Add A New Project</h2>
-          <form onSubmit={addNewProject} autoComplete="off">
+          <form onSubmit={handleSubmit} autoComplete="off">
             <label htmlFor="projectname">Project Name: </label>
-            <input
-              type="text"
-              id="projectname"
-              name="projectname"
+            <input 
+              type="text" 
+              id="projectname" 
+              name="projectname" 
               value={newProjectTitle}
               onChange={projectChange}
               required
             />
+            
             <label htmlFor="description">Description: </label>
-            <input
-              type="text"
-              id="description"
-              name="description"
-              value={newDescription}
+            <input 
+              type="text" 
+              id="description" 
+              name="description" 
+              value={newDescription} 
               onChange={descriptionChange}
               required
             />
+            
             {/* the following input will need to be dynamic to capture all available contributors*/}
             <label htmlFor="contributors">Contributors: </label>
-            <input
-              type="text"
-              id="contributors"
-              name="contributors"
+            <input 
+              type="text" 
+              id="contributors" 
+              name="contributors" 
               value={newContributors}
               onChange={contributorsChange}
               required
             />
-            <button type="submit">Submit</button>
-            <button className="cancel-modal" onClick={toggleAddProjectModal}>
-              Cancel
-            </button>
+            <div className="dashboard-project-modal-btns">
+              <button className="submit-modalBtn" type="submit">Submit</button>
+              <button className="cancel-modalBtn" onClick={handleCancel}>Cancel</button>
+            </div>
           </form>
+          
         </section>
-      )}
+        
+      //   className={isActive ? 'your_className': null} 
+      // onClick={toggleClass} 
+      }
       <div className={open && "grayed-out"}>
-        <ProjectCard handleClick={toggleAddProjectModal} projects={projects} />
+        <ProjectCard 
+          projects={projects}
+          handleClick={toggleAddProjectModal}
+        />
         <div className="dashboard-card-container">
           <TixByPriority />
           <TixByType />
@@ -103,7 +119,7 @@ const Dashboard = () => {
         </div>
       </div>
     </main>
-  );
+    );
 };
 
 export default Dashboard;
