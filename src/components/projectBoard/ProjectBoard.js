@@ -6,7 +6,7 @@ const ProjectBoard = () => {
     <>
       <Header />
       <SideNav />
-      <div>
+      <div className="projectboard-container">
         <h1>PROJECTBOARD WORKS!</h1>
       </div>
     </>
