@@ -22,6 +22,63 @@ function App() {
       </div>
       <div className="auth-card">
         <h3>Sign Up</h3>
+        <form>
+            <label htmlFor="first-name">First Name: </label>
+            <input 
+              type="text"
+              id="first-name"
+              name="first-name"
+              // value={firstName}
+              // onChange={firstNameChange}
+              required
+            />
+            <label htmlFor="last-name">Last Name: </label>
+            <input 
+              type="text"
+              id="last-name"
+              name="last-name"
+              // value={lastName}
+              // onChange={lastNameChange}
+              required
+            />
+            <label htmlFor="email">Email: </label>
+            <input 
+              type="email"
+              id="email"
+              name="email"
+              // value={lastName}
+              // onChange={lastNameChange}
+              required
+            />
+            <label htmlFor="telephone">Phone Number: </label>
+            <input 
+              type="tel"
+              id="telephone"
+              name="telephone"
+              // value={lastName}
+              // onChange={lastNameChange}
+              required
+            />
+            <label htmlFor="password">Password: </label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              // value={lastName}
+              // onChange={lastNameChange}
+              required
+            />
+            <label htmlFor="confirm-password">Confirm Password: </label>
+            <input 
+              type="password"
+              id="password"
+              name="confirm-password"
+              // value={lastName}
+              // onChange={lastNameChange}
+              required
+            />
+            <button>Submit</button>
+        </form>
         <Link to="/dashboard">Dashboard</Link>
         <Link to="/projectboard">ProjectBoard</Link>
         <p>&copy; 2022 | Jason Whisnant</p>
