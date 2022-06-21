@@ -1,6 +1,6 @@
-import React from 'react';
 
-const Header = () => {
+const Header = (props) => {
+  
   return(
     <header className="header-container">
       <h3>Dashboard - userName</h3>
