@@ -1,26 +1,15 @@
 import { Link } from 'react-router-dom'
 
 
-import './App.css'
-// import data from './data/fakedata.json'
-// to be used when the backend is established
-//import BACKEND_API from '.data/data'
+const SignUp = () => {
 
-
-function App() {
-  
-  // // will need to change to BACKEND_API when ready
-  // useEffect(() => {
-  //   setIssues(data)
-  // }, [])
-  
   return (
-    <div className="auth-container">
-      <div className="auth-title">
+    <div className="signup-container">
+      <div className="signup-title">
         <h1>Bug_Bank</h1>
-        <h4>Sign In or Sign Up</h4>
+        <h4>Register</h4>
       </div>
-      <div className="auth-card">
+      <div className="signup-card">
         <h3>Sign Up</h3>
         <form>
             <label htmlFor="first-name">First Name: </label>
@@ -81,7 +70,6 @@ function App() {
         </form>
         <Link to="/dashboard">Dashboard</Link>
         <Link to="/projectboard">ProjectBoard</Link>
-        <Link to="/signup">SignUp</Link>
         <p>&copy; 2022 Jason Whisnant</p>
       </div>
         
@@ -91,4 +79,4 @@ function App() {
   );
 }
 
-export default App;
+export default SignUp;
