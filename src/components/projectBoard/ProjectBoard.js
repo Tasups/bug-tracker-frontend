@@ -2,6 +2,7 @@ import SideNav from '../SideNav'
 import ProjectHeader from './ProjectHeader'
 import ProjectTeam from './ProjectTeam'
 import ProjectTickets from './ProjectTickets'
+import ProjectTicketDescription from './ProjectTicketDescription'
 
 const projects = [
   {
@@ -38,11 +39,12 @@ const ProjectBoard = () => {
         <div className="projectboard-team-and-tickets">
           <ProjectTeam
           data={projects}
-        />
-        <ProjectTickets 
-          tickets={tickets}
-        />
+          />
+          <ProjectTickets 
+            tickets={tickets}
+          />
         </div>
+        <ProjectTicketDescription />
       </div>
     </>
     )

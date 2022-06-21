@@ -1,4 +1,7 @@
  
+ 
+ //this will need to have a maximum number, maybe 4-5 and then a scrollbar would be good
+ 
  const ProjectTickets = (props) => {
    
    return(
