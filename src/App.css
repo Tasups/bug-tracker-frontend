@@ -205,6 +205,8 @@ body{
   /* background by SVGBackgrounds.com */
 }
 
+
+
 .header-container h3 {
   position: absolute;
   left: 16vw;
@@ -213,6 +215,20 @@ body{
   padding-left: 3rem;
   color: white;
   font-weight: bold;
+}
+
+.header-project-titles {
+  position: absolute;
+  display: flex;
+  left: 16vw;
+  margin: 1rem 0;
+  padding-top: 4rem;
+  padding-left: 3rem;
+  color: white;
+}
+
+.header-project-titles h4 {
+  margin-right: 6rem;
 }
 
 /* SIDENAV  *******************************************************/
@@ -521,4 +537,155 @@ body{
   width: 84vw;
   min-height: 80vh;
   background-color: rgb(220,220,220);
+}
+
+.projectboard-team-and-tickets {
+  display: flex;
+}
+
+/* PROJECTTEAM CARD ***********************************************/
+
+.projectteam-container {
+  margin: 1rem;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  -webkit-box-shadow: 5px 5px 15px 3px rgba(0,0,0,0.36); 
+  box-shadow: 5px 5px 15px 3px rgba(0,0,0,0.36);
+  min-width: 40%;
+}
+
+.projectteam-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.projectteam-title h4 {
+  padding: 0 1rem;
+}
+
+.projectteam-title button {
+  background-color: rgba(36,27,242, 1);
+  color: white;
+  font-weight: bold;
+  padding: 0 1rem;
+  margin: 1rem;
+  border: 3px solid rgba(36,27,242, 1);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.projectteam-title button:hover {
+  background-color: rgba(36,27,242, 0.8);
+  border: 3px solid rgba(36,27,242, 0.8);
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+}
+
+.projectteam-table table {
+  margin: 0.4rem auto;
+  text-align: center;
+  border-collapse: collapse;
+  font-size: 0.9em;
+  min-width: 100%;
+}
+
+.projectteam-table th {
+  text-align: left;
+  background-color: rgba(36,27,242, 0.15);
+  font-weight: bold;
+}
+
+.projectteam-table td {
+  text-align: left;
+}
+
+.projectteam-table th, .projectteam-table td {
+  padding: 0.5rem 0.5rem;
+}
+
+.projectteam-table tr {
+  border-bottom: 1px solid rgba(230, 230, 230, 1);
+}
+
+.projectteam-table tr:last-of-type {
+  border-bottom: 4px solid rgba(36,27,242, 0.15);
+}
+
+/* PROJECTTICKETS CARD ********************************************/
+
+.projecttickets-container {
+  margin: 1rem;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  -webkit-box-shadow: 5px 5px 15px 3px rgba(0,0,0,0.36); 
+  box-shadow: 5px 5px 15px 3px rgba(0,0,0,0.36);
+  max-width: 55%;
+}
+
+.projecttickets-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.projecttickets-title h4 {
+  padding: 0 1rem;
+}
+
+.projecttickets-title button {
+  background-color: rgba(36,27,242, 1);
+  color: white;
+  font-weight: bold;
+  padding: 0 1rem;
+  margin: 1rem;
+  border: 3px solid rgba(36,27,242, 1);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.projecttickets-title button:hover {
+  background-color: rgba(36,27,242, 0.8);
+  border: 3px solid rgba(36,27,242, 0.8);
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+}
+
+.projecttickets-table table {
+  margin: 0.4rem auto;
+  text-align: center;
+  border-collapse: collapse;
+  font-size: 0.9em;
+  min-width: 100%;
+}
+
+.projecttickets-table th {
+  text-align: left;
+  background-color: rgba(36,27,242, 0.15);
+  font-weight: bold;
+}
+
+.projecttickets-table td {
+  text-align: left;
+}
+
+.projecttickets-table th, .projecttickets-table td {
+  padding: 0.5rem 0.5rem;
+}
+
+.projecttickets-table tr {
+  border-bottom: 1px solid rgba(230, 230, 230, 1);
+}
+
+.projecttickets-table tr:last-of-type {
+  border-bottom: 4px solid rgba(36,27,242, 0.15);
+}
+
+.projecttickets-table tr:not(:first-of-type):hover {
+  background-color:  rgba(110, 104, 242, 1);
+  color: white;
+  transition: ease-in-out 0.2s;
+  cursor: pointer;
 }

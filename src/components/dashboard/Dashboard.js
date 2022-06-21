@@ -62,7 +62,7 @@ const Dashboard = () => {
   
   return(
     <>
-      <Header />
+      <Header projects={projects[0].contributors} />
       <SideNav />
       <main className="dashboard-container">
       
@@ -106,7 +106,7 @@ const Dashboard = () => {
           </section>
         }
         
-        <div className={open && "grayed-out"}>
+        <div className={open ? "grayed-out" : undefined}>
           <ProjectCard 
             projects={projects}
             handleClick={toggleAddProjectModal}

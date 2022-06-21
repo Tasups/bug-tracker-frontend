@@ -10,18 +10,20 @@ const ProjectCard = (props) => {
 
       <div className="projectcard-table">
         <table>
-          <tr>
-            <th>Project</th>
-            <th>Description</th>
-            <th>Contributors</th>
-          </tr>
-          {props.projects?.map((el) => (
-            <tr key={el.projectTitle}>
-              <td>{el.projectTitle}</td>
-              <td>{el.description}</td>
-              <td>{el.contributors}</td>
+          <tbody>
+            <tr>
+              <th>Project</th>
+              <th>Description</th>
+              <th>Contributors</th>
             </tr>
-          ))}
+            {props.projects?.map((el) => (
+              <tr key={el.projectTitle}>
+                <td>{el.projectTitle}</td>
+                <td>{el.description}</td>
+                <td>{el.contributors}</td>
+              </tr>
+            ))}
+          </tbody>
         </table>
       </div>
     </section>
