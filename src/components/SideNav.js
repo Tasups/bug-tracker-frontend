@@ -1,9 +1,11 @@
 import React from 'react';
 import BugReportIcon from '@mui/icons-material/BugReport';
 
+import { Link } from 'react-router-dom'
+
 const SideNav = () => {
   return(
-    <div className="sidenav-container">
+    <nav className="sidenav-container">
       <div className="sidenav-icon">
         <BugReportIcon sx={{ fontSize: "3rem" }}/>
         <h3>Bug Bank</h3>
@@ -15,7 +17,15 @@ const SideNav = () => {
           <li>Administration</li>
         </ul>
       </div>
-    </div>
+      <div className="sidenav-button">
+          <button>Log Out</button>
+      </div>
+      <div className="test-links">
+        <Link to="/">Home</Link>
+        <Link to="/dashboard">Dashboard</Link>
+        <Link to="/projectboard">ProjectBoard</Link>
+      </div>
+    </nav>
     )
 }
 
