@@ -8,6 +8,7 @@ import { DataProvider } from './context/DataContext';
 
 import Dashboard from './components/dashboard/Dashboard'
 import ProjectBoard from './components/projectBoard/ProjectBoard'
+import SignUp from './components/signup/SignUp'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,6 +19,7 @@ root.render(
           <Route path="/" element={<App />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/projectboard" element={<ProjectBoard />} />
+          <Route path="/signup" element={<SignUp />} />
         </Routes>
       </BrowserRouter>
     </DataProvider>
