@@ -12,56 +12,62 @@ const SignUp = () => {
       <div className="signup-card">
         <h3>Sign Up</h3>
         <form>
-            <label htmlFor="first-name">First Name: </label>
+            <label htmlFor="first-name" hidden="hidden">First Name: </label>
             <input 
               type="text"
               id="first-name"
               name="first-name"
+              placeholder="First Name"
               // value={firstName}
               // onChange={firstNameChange}
               required
             />
-            <label htmlFor="last-name">Last Name: </label>
+            <label htmlFor="last-name" hidden="hidden">Last Name: </label>
             <input 
               type="text"
               id="last-name"
               name="last-name"
+              placeholder="Last Name"
               // value={lastName}
               // onChange={lastNameChange}
               required
             />
-            <label htmlFor="email">Email: </label>
+            <label htmlFor="email" hidden="hidden">Email: </label>
             <input 
               type="email"
               id="email"
               name="email"
+              placeholder="Email"
               // value={lastName}
               // onChange={lastNameChange}
               required
             />
-            <label htmlFor="telephone">Phone Number: </label>
+            <label htmlFor="telephone" hidden="hidden">Phone Number: </label>
             <input 
               type="tel"
               id="telephone"
               name="telephone"
+              placeholder="Phone Number"
               // value={lastName}
               // onChange={lastNameChange}
               required
             />
-            <label htmlFor="password">Password: </label>
+            <label htmlFor="password" hidden="hidden">Password: </label>
             <input
               type="password"
               id="password"
               name="password"
+              placeholder="Password"
               // value={lastName}
               // onChange={lastNameChange}
               required
             />
-            <label htmlFor="confirm-password">Confirm Password: </label>
+            <label htmlFor="confirm-password" hidden="hidden">Confirm Password: </label>
             <input 
               type="password"
               id="password"
               name="confirm-password"
+              placeholder="Confirm Password"
               // value={lastName}
               // onChange={lastNameChange}
               required
