@@ -45,8 +45,13 @@ function App() {
         </form>
         <Link to="/dashboard">Dashboard</Link>
         <Link to="/projectboard">ProjectBoard</Link>
+<<<<<<< HEAD
         <Link to="/signup">Sign Up</Link>
         <p>&copy; 2022 | Jason Whisnant</p>
+=======
+        <Link to="/signup">SignUp</Link>
+        <p>&copy; 2022 Jason Whisnant</p>
+>>>>>>> e92a6f26c9aaad10c6e96714023c2bde63abb9b9
       </div>
         
     </div>
