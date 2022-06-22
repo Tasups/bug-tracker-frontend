@@ -8,6 +8,7 @@
      <section className="projecttickets-container">
         <div className="projecttickets-title">
           <h4>Tickets</h4>
+          <button>Edit</button>
         </div>
         <div className="projecttickets-table">
           <table>

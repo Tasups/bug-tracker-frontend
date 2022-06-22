@@ -3,6 +3,7 @@ import ProjectHeader from './ProjectHeader'
 import ProjectTeam from './ProjectTeam'
 import ProjectTickets from './ProjectTickets'
 import ProjectTicketDescription from './ProjectTicketDescription'
+import ProjectTicketComments from './ProjectTicketComments'
 
 const projects = [
   {
@@ -38,13 +39,16 @@ const ProjectBoard = () => {
       <div className="projectboard-container">
         <div className="projectboard-team-and-tickets">
           <ProjectTeam
-          data={projects}
+            data={projects}
           />
           <ProjectTickets 
             tickets={tickets}
           />
         </div>
-        <ProjectTicketDescription />
+        <div className="projectboard-desc-and-comments">
+          <ProjectTicketDescription />
+          <ProjectTicketComments />
+        </div>
       </div>
     </>
     )
