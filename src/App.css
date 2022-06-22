@@ -300,6 +300,10 @@ html,body {
   padding-top: 2rem;
 }
 
+.copyright {
+  margin-bottom: 0;
+}
+
 /* DASHBOARD ******************************************************/
 
 .dashboard-container {
@@ -711,7 +715,8 @@ html,body {
   border-radius: 5px;
   -webkit-box-shadow: 5px 5px 15px 3px rgba(0,0,0,0.36); 
   box-shadow: 5px 5px 15px 3px rgba(0,0,0,0.36);
-  min-width: 50%;
+  max-width: 45%;
+  max-height: 20rem;
 }
 
 .ticketsdetails-title {
@@ -810,7 +815,7 @@ html,body {
   border-radius: 5px;
   -webkit-box-shadow: 5px 5px 15px 3px rgba(0,0,0,0.36); 
   box-shadow: 5px 5px 15px 3px rgba(0,0,0,0.36);
-  max-width: 40%;
+  max-width: 47%;
 }
 
 .ticketcomments-title {
@@ -863,4 +868,27 @@ html,body {
 }
 
 .ticketcomments-comment-list {
+  max-height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
+
+/* COMMENT CARD ***************************************************/
+
+.commentcard-container {
+  width: 92%;
+  margin: 0.5rem;
+  border: 1px solid rgba(36,27,242, 0.5);
+  border-radius: 3px;
+}
+
+.commentcard-container div {
+  margin: 0.5rem;
+}
+
+.commentcard-container h5 {
+  margin: 0.5rem 0;
 }

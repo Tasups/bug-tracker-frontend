@@ -25,6 +25,9 @@ const SideNav = () => {
         <Link to="/dashboard">Dashboard</Link>
         <Link to="/projectboard">ProjectBoard</Link>
       </div>
+      <div className="copyright">
+        <p>&copy; 2022 Jason Whisnant</p>
+      </div>
     </nav>
     )
 }
