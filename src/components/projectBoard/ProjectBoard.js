@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+const { v4: uuidv4 } = require('uuid');
+
 import SideNav from '../SideNav'
 import ProjectHeader from './ProjectHeader'
 import ProjectTeam from './ProjectTeam'
@@ -19,16 +21,15 @@ const ProjectBoard = () => {
   const [comments, setComments] = useState(commentsData)
   const [newComment, setNewComment] = useState("")
   
-  const commentChange = (e) => {
-    setNewComment(e.target.value)
-  }
-  
   const dateConversion = () => {
     let date = new Date();
     let dateToString = date.toString()
     let slicedDate = dateToString.slice(0,-24)
-    console.log(slicedDate);
     return(slicedDate)
+  }
+  
+  const commentChange = (e) => {
+    setNewComment(e.target.value)
   }
   
   const addNewComment = (e) => {
@@ -37,7 +38,7 @@ const ProjectBoard = () => {
       comment: newComment,
       author: "Jason", // the author would be the person who is logged in (as a default)
       date: dateConversion(),
-      id: Math.random() * 10,
+      id: uuidv4,
     }
     setComments([...comments, newTicketComment])
   }
