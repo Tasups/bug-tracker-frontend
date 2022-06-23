@@ -1,9 +1,7 @@
 import CommentCard from './CommentCard'
 
 const ProjectTicketComments = (props) => {
-  
-  console.log(props)
-  
+    
   return (
     <section className="ticketcomments-container">
       <div className="ticketcomments-title">

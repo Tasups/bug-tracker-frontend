@@ -65,28 +65,22 @@ const comments = [
   ]
 
 const ProjectBoard = () => {
-  return(
+  return (
     <>
       <ProjectHeader />
       <SideNav />
       <div className="projectboard-container">
         <div className="projectboard-team-and-tickets">
-          <ProjectTeam
-            data={projects}
-          />
-          <ProjectTickets 
-            tickets={tickets}
-          />
+          <ProjectTeam data={projects} />
+          <ProjectTicketDescription />
         </div>
         <div className="projectboard-desc-and-comments">
-          <ProjectTicketDescription />
-          <ProjectTicketComments
-            comments={comments}
-          />
+          <ProjectTickets tickets={tickets} />
+          <ProjectTicketComments comments={comments} />
         </div>
       </div>
     </>
-    )
+  );
 }
 
 export default ProjectBoard;
