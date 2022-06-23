@@ -29,6 +29,26 @@ const tickets = [
     description: "fake it until you make it, which is essentially building and connecting the backend and the database",
     author: "Ada Lovelace"
   },
+  {
+    title: "ticket data",
+    description: "fake it until you make it, which is essentially building and connecting the backend and the database",
+    author: "Ada Lovelace"
+  },
+  {
+    title: "ticket data",
+    description: "fake it until you make it, which is essentially building and connecting the backend and the database",
+    author: "Ada Lovelace"
+  },
+  {
+    title: "ticket data",
+    description: "fake it until you make it, which is essentially building and connecting the backend and the database",
+    author: "Ada Lovelace"
+  },
+  {
+    title: "ticket data",
+    description: "fake it until you make it, which is essentially building and connecting the backend and the database",
+    author: "Ada Lovelace"
+  },
   ]
   
 const comments = [
@@ -65,22 +85,28 @@ const comments = [
   ]
 
 const ProjectBoard = () => {
-  return (
+  return(
     <>
       <ProjectHeader />
       <SideNav />
       <div className="projectboard-container">
         <div className="projectboard-team-and-tickets">
-          <ProjectTeam data={projects} />
+          <ProjectTeam
+            data={projects}
+          />
           <ProjectTicketDescription />
         </div>
         <div className="projectboard-desc-and-comments">
-          <ProjectTickets tickets={tickets} />
-          <ProjectTicketComments comments={comments} />
+          <ProjectTickets 
+            tickets={tickets}
+          />
+          <ProjectTicketComments
+            comments={comments}
+          />
         </div>
       </div>
     </>
-  );
+    )
 }
 
 export default ProjectBoard;

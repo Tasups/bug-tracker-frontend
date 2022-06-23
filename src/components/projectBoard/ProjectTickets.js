@@ -4,7 +4,7 @@ import { useState } from 'react'
  
 const ProjectTickets = (props) => {
    
-  const [tickets, setTickets] = useState(props.tickets)
+const [tickets, setTickets] = useState(props.tickets)
 
    console.log(tickets)
    
@@ -16,12 +16,16 @@ const ProjectTickets = (props) => {
        </div>
        <div className="projecttickets-table">
          <table>
-           <tbody>
-             <tr>
-               <th>Title</th>
-               <th>Description</th>
-               <th>Author</th>
-             </tr>
+            <tbody>
+              <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Author</th>
+              </tr>
+            </tbody>
+          </table>
+          <table className="projecttickets-td">
+            <tbody>
              {tickets?.map((ticket) => (
                <tr key={ticket.title}>
                  <td>{ticket.title}</td>
