@@ -499,7 +499,7 @@ html,body {
   flex-direction: column;
   justify-content: space-between;
   min-width: 18rem;
-  min-heigth: 16rem;
+  min-height: 16rem;
   max-height: 24rem;
   border: 3px solid white;
   border-radius: 5px;
@@ -815,7 +815,7 @@ html,body {
   border-radius: 5px;
   -webkit-box-shadow: 5px 5px 15px 3px rgba(0,0,0,0.36); 
   box-shadow: 5px 5px 15px 3px rgba(0,0,0,0.36);
-  max-width: 47%;
+  max-width: 52.7%;
 }
 
 .ticketcomments-title {
@@ -871,7 +871,6 @@ html,body {
   max-height: 20rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   overflow: auto;
 }
@@ -879,7 +878,7 @@ html,body {
 /* COMMENT CARD ***************************************************/
 
 .commentcard-container {
-  width: 92%;
+  width: 96%;
   margin: 0.5rem;
   border: 1px solid rgba(36,27,242, 0.5);
   border-radius: 3px;
