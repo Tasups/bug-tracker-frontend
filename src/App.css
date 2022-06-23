@@ -671,6 +671,10 @@ html,body {
   padding: 0 1rem;
 }
 
+.faPlus-btn{
+  font-size: 1.25rem;
+}
+
 .projecttickets-title button {
   background-color: rgba(36,27,242, 1);
   color: white;
@@ -738,6 +742,105 @@ html,body {
   transition: ease-in-out 0.2s;
   cursor: pointer;
 }
+
+/* PROJECT TICKETS MODAL CLASS NAMES NEED TO BE CHANGED!!!!!!!!!!!!!!!!!!!!!!!*/
+
+.dashboard-project-modal {
+  position: absolute;
+  background-color: rgba(110, 104, 242, 1);
+  z-index: 10;
+  min-height: 20rem;
+  width: 40%;
+  border: 3px solid rgba(110, 104, 242, 1);
+  border-radius: 10px;
+  left: 0;
+  right: 0;
+  margin: 5rem auto;
+}
+
+.dashboard-project-modal h2 {
+  color: white;
+  font-weight: bold;
+  margin: 1rem;
+  text-align: center;
+}
+
+.dashboard-project-modal form {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 3rem;
+}
+
+.dashboard-project-modal label {
+  color: white;
+  font-weight: bold;
+}
+
+.dashboard-project-modal input[type=text], select {
+  width: 100%;
+  padding: 0.5rem 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.dashboard-project-modal input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dashboard-project-modal input[type=submit]:hover {
+  background-color: red;
+}
+
+.dashboard-project-modal input:last-of-type {
+  margin-bottom: 2rem;
+}
+
+.dashboard-project-modal button {
+  min-height: 3rem;
+  min-width: 7rem;
+  margin: 0.25rem;
+  padding: 0.25rem;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 5px;
+}
+
+.dashboard-project-modal-btns {
+  display: flex;
+  justify-content: space-around;
+}
+
+.submit-modalBtn {
+  background-color: #6CDC03;
+  border: solid 3px #6CDC03;
+}
+
+.submit-modalBtn:hover {
+  background-color: #76EF04;
+  border: solid 3px #76EF04;
+}
+
+.cancel-modalBtn {
+  background-color: #EE2604;
+  border: solid 3px #EE2604;
+  color: white;
+}
+
+.cancel-modalBtn:hover {
+  background-color: #e85f48;
+  border: solid 3px #e85f48;
+}
+
 
 /* PROJECTTICKETS DETAILS CARD ************************************/
 
