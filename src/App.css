@@ -319,6 +319,7 @@ html,body {
 .copyright {
   bottom: 0;
   position: absolute;
+  font-size: 0.8rem;
 }
 
 /* DASHBOARD ******************************************************/
@@ -699,7 +700,6 @@ html,body {
 
 .projecttickets-table table {
   margin: 0.4rem auto;
-  text-align: center;
   border-collapse: collapse;
   font-size: 0.9em;
   min-width: 100%;
@@ -717,6 +717,11 @@ html,body {
 
 .projecttickets-table th, .projecttickets-table td {
   padding: 0.5rem 0.5rem;
+}
+
+.projecttickets-table th:last-of-type {
+  text-align: right;
+  padding-right: 2rem;
 }
 
 .projecttickets-table tr {

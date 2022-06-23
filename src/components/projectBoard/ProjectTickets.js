@@ -6,8 +6,6 @@ const ProjectTickets = (props) => {
    
 const [tickets, setTickets] = useState(props.tickets)
 
-   console.log(tickets)
-   
    return (
      <section className="projecttickets-container">
        <div className="projecttickets-title">

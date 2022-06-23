@@ -1,7 +1,5 @@
 const CommentCard = (props) => {
   
-  console.log(props.author)
-  
   return(
     <article className="commentcard-container">
       <div>

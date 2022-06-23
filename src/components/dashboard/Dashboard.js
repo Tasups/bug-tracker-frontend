@@ -34,7 +34,7 @@ const Dashboard = () => {
 
   const contributorsChange = (e) => {
     setNewContributors(e.target.value);
-  };
+  }
 
   const addNewProject = (e) => {
     e.preventDefault()
