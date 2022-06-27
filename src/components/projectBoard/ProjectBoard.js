@@ -7,7 +7,7 @@ import ProjectTickets from './ProjectTickets'
 import ProjectTicketDescription from './ProjectTicketDescription'
 import ProjectTicketComments from './ProjectTicketComments'
 
-import projectsData from '../../data/projectsData'
+import projectsData from '../../data/contributorsData'
 import ticketsData from '../../data/ticketsData'
 import commentsData from '../../data/commentsData'
 
@@ -23,7 +23,11 @@ const ProjectBoard = () => {
   const [newTitle, setNewTitle] = useState("")
   const [newDescription, setNewDescription] = useState("")
   const [newAuthor, setNewAuthor] = useState("")
-  
+  const [newStatus, setNewStatus] = useState("")
+  const [newPriority, setNewPriority] = useState("")
+  const [newType, setNewType] = useState("")
+  const [newETA, setNewETA] = useState("")
+
   const toggleAddTicketModal = () => {
     setOpen(prev => !prev)
   }
@@ -54,6 +58,22 @@ const ProjectBoard = () => {
   const authorChange = (e) => {
     setNewAuthor(e.target.value)
   }
+  
+  const statusChange = (e) => {
+    setNewStatus(e.target.value)
+  }
+  
+  const priorityChange = (e) => {
+    setNewPriority(e.target.value)
+  }
+  
+  const typeChange = (e) => {
+    setNewType(e.target.value)
+  }
+  
+  const etaChange = (e) => {
+    setNewETA(e.target.value)
+  }
 
   const addNewTicket = (e) => {
     e.preventDefault()
@@ -61,12 +81,20 @@ const ProjectBoard = () => {
       title: newTitle,
       description: newDescription,
       author: newAuthor,
+      status: newStatus,
+      priority: newPriority,
+      type: newType,
+      ETA: newETA,
       id: uuidv4()
     }
     setTickets([...tickets, newTicket])
     setNewTitle("")
     setNewDescription("")
     setNewAuthor("")
+    setNewStatus("")
+    setNewPriority("")
+    setNewType("")
+    setNewETA("")
     toggleAddTicketModal()
   }
   
@@ -81,8 +109,6 @@ const ProjectBoard = () => {
     setComments([...comments, newTicketComment])
   }
   
-  //className={open ? "grayed-out" : undefined}
-      //"projectboard-container" `${open ? "grayed-out" : undefined}`
   
   return(
     <>
@@ -92,7 +118,7 @@ const ProjectBoard = () => {
       <div className="projectboard-container">
       
       { open && 
-          <section className="dashboard-project-modal">
+          <section className="projectboard-ticket-modal">
             <h2>Add A New Ticket</h2>
             <form onSubmit={addNewTicket} autoComplete="off">
               <label htmlFor="ticket-title">Ticket Title: </label>
@@ -113,7 +139,9 @@ const ProjectBoard = () => {
                 onChange={descriptionChange}
                 required
               />
-              {/* the following input will need to be pulled from whoever the user is - set by authContext*/}
+              {/* 
+                the following input will need to be pulled from whoever the user is - set by authContext
+              */}
               <label htmlFor="author">Contributors: </label>
               <input 
                 type="text" 
@@ -123,7 +151,49 @@ const ProjectBoard = () => {
                 onChange={authorChange}
                 required
               />
-              <div className="dashboard-project-modal-btns">
+              
+              <label htmlFor="status">Status: </label>
+              <select name="status" id="status-select">
+                <option value="">select status</option>
+                <option value="open">open</option>
+                <option value="closed">closed</option>
+              </select>
+              
+              <label htmlFor="priority">Priority: </label>
+              <select name="priority" id="priority-select">
+                <option value="">select priority</option>
+                <option value="low">low</option>
+                <option value="normal">normal</option>
+                <option value="important">important</option>
+                <option value="critical">critical</option>
+              </select>
+              
+              <label htmlFor="type">Type: </label>
+              <select name="priority" id="priority-select">
+                <option value="">select type</option>
+                <option value="bug">bug</option>
+                <option value="feature">feature</option>
+                <option value="issue">issue</option>
+              </select> 
+              
+              <label htmlFor="eta">ETA: </label>
+              <select name="eta" id="eta-select">
+                <option value="one day">one day</option>
+                <option value="one week">one week</option>
+                <option value="one month">one month</option>
+                <option value="one quarter">one quarter</option>
+              </select> 
+              {/*
+              <input 
+                type="text" 
+                id="eta" 
+                name="eta" 
+                value={newETA}
+                onChange={etaChange}
+                required
+              />
+              */}
+              <div className="projectboard-ticket-modal-btns">
                 <button className="submit-modalBtn" type="submit">Submit</button>
                 <button className="cancel-modalBtn" onClick={handleCancel}>Cancel</button>
               </div>
@@ -132,6 +202,7 @@ const ProjectBoard = () => {
         }
         
         <div className={open ? "grayed-out" : undefined}>
+        
           <div className="projectboard-team-and-tickets">
             <ProjectTeam
               data={projects}
@@ -160,7 +231,9 @@ const ProjectBoard = () => {
               newComment={newComment}
             />
           </div>
+          
         </div>
+        
       </div>
     </>
     )

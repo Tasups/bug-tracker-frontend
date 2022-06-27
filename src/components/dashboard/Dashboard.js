@@ -7,7 +7,7 @@ import TixByPriority from './TixByPriority'
 import TixByType from './TixByType'
 import TixByStatus from './TixByStatus'
 
-import { issues } from '../../data/fakedata';
+import { issues } from '../../data/projectData';
 
 const Dashboard = () => {
   

@@ -2,10 +2,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
-
  //this will need to have a maximum number, maybe 4-5 and then a scrollbar would be good
  
 const ProjectTickets = (props) => {
+  
   
    return (
      <section className="projecttickets-container">
