@@ -18,6 +18,7 @@ const ProjectBoard = () => {
   const [open, setOpen] = useState(false)
   const [projects, setProjects] = useState(projectsData)
   const [tickets, setTickets] = useState(ticketsData)
+  const [ticketForDescription, setTicketForDescription] = useState({})
   const [comments, setComments] = useState(commentsData)
   const [newComment, setNewComment] = useState("")
   const [newTitle, setNewTitle] = useState("")
@@ -58,22 +59,10 @@ const ProjectBoard = () => {
   const authorChange = (e) => {
     setNewAuthor(e.target.value)
   }
-  
-  const statusChange = (e) => {
-    setNewStatus(e.target.value)
-  }
-  
-  const priorityChange = (e) => {
-    setNewPriority(e.target.value)
-  }
-  
-  const typeChange = (e) => {
-    setNewType(e.target.value)
-  }
-  
-  const etaChange = (e) => {
-    setNewETA(e.target.value)
-  }
+
+  // const handleTicketClick = (e) => {
+  //   setTicketForDescription()
+  // }
 
   const addNewTicket = (e) => {
     e.preventDefault()
@@ -88,6 +77,8 @@ const ProjectBoard = () => {
       id: uuidv4()
     }
     setTickets([...tickets, newTicket])
+    // PLACE TO SEE IF THE ONCHANGE ANONYMOUS FUNCTION SET STATE OR NOT
+    setTicketForDescription(newTicket)
     setNewTitle("")
     setNewDescription("")
     setNewAuthor("")
@@ -107,6 +98,12 @@ const ProjectBoard = () => {
       id: uuidv4,
     }
     setComments([...comments, newTicketComment])
+  }
+  
+  const handleTicketClick = (e) => {
+    e.preventDefault()
+    alert("clicked!")
+    console.log(e.target)
   }
   
   
@@ -153,14 +150,20 @@ const ProjectBoard = () => {
               />
               
               <label htmlFor="status">Status: </label>
-              <select name="status" id="status-select">
+              <select name="status" onChange={(e) => {
+                const newStatus = e.target.value
+                setNewStatus(newStatus)
+              }}>
                 <option value="">select status</option>
                 <option value="open">open</option>
                 <option value="closed">closed</option>
               </select>
               
               <label htmlFor="priority">Priority: </label>
-              <select name="priority" id="priority-select">
+              <select name="priority" onChange={(e) => {
+                const newPriority = e.target.value
+                setNewPriority(newPriority)
+              }}>
                 <option value="">select priority</option>
                 <option value="low">low</option>
                 <option value="normal">normal</option>
@@ -169,7 +172,10 @@ const ProjectBoard = () => {
               </select>
               
               <label htmlFor="type">Type: </label>
-              <select name="priority" id="priority-select">
+              <select name="type" onChange={(e) => {
+                const newType = e.target.value
+                setNewType(newType)
+              }}>
                 <option value="">select type</option>
                 <option value="bug">bug</option>
                 <option value="feature">feature</option>
@@ -177,13 +183,17 @@ const ProjectBoard = () => {
               </select> 
               
               <label htmlFor="eta">ETA: </label>
-              <select name="eta" id="eta-select">
+              <select name="eta" onChange={(e) => {
+                const newETA = e.target.value
+                setNewETA(newETA)
+              }}>
+                <option value="">select time due</option>
                 <option value="one day">one day</option>
                 <option value="one week">one week</option>
                 <option value="one month">one month</option>
                 <option value="one quarter">one quarter</option>
               </select> 
-              {/*
+              {/* OLD CODE FOR CONSIDERATION IF SELECT DOESN'T WORK
               <input 
                 type="text" 
                 id="eta" 
@@ -207,22 +217,17 @@ const ProjectBoard = () => {
             <ProjectTeam
               data={projects}
             />
-            <ProjectTicketDescription />
+            <ProjectTicketDescription 
+              ticketForDescription={ticketForDescription}
+            />
           </div>
           <div className="projectboard-desc-and-comments">
             <ProjectTickets 
               tickets={tickets}
-              titleChange={titleChange}
-              newTitle={newTitle}
-              descriptionChange={descriptionChange}
-              newDescription={newDescription}
-              authorChange={authorChange}
-              newAuthor={newAuthor}
-              addNewTicket={addNewTicket}
-              open={open}
-              setOpen={setOpen}
               handleCancel={handleCancel}
               toggleAddTicketModal={toggleAddTicketModal}
+              // selectTicket={handleClick}
+              handleTicketClick={handleTicketClick}
             />
             <ProjectTicketComments
               comments={comments}

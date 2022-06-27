@@ -6,7 +6,6 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
  
 const ProjectTickets = (props) => {
   
-  
    return (
      <section className="projecttickets-container">
 
@@ -29,7 +28,7 @@ const ProjectTickets = (props) => {
           <table className="projecttickets-td">
             <tbody>
              {props.tickets?.map((ticket) => (
-               <tr key={ticket.id}>
+               <tr key={ticket.id} onClick={props.handleTicketClick}>
                  <td>{ticket.title}</td>
                  <td>{ticket.description}</td>
                  <td>{ticket.author}</td>
