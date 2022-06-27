@@ -64,6 +64,9 @@ const ProjectBoard = () => {
       id: uuidv4()
     }
     setTickets([...tickets, newTicket])
+    setNewTitle("")
+    setNewDescription("")
+    setNewAuthor("")
     toggleAddTicketModal()
   }
   
