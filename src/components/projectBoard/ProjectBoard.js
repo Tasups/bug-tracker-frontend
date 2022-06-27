@@ -90,33 +90,76 @@ const ProjectBoard = () => {
       <SideNav />
       
       <div className="projectboard-container">
-        <div className="projectboard-team-and-tickets">
-          <ProjectTeam
-            data={projects}
-          />
-          <ProjectTicketDescription />
-        </div>
-        <div className="projectboard-desc-and-comments">
-          <ProjectTickets 
-            tickets={tickets}
-            titleChange={titleChange}
-            newTitle={newTitle}
-            descriptionChange={descriptionChange}
-            newDescription={newDescription}
-            authorChange={authorChange}
-            newAuthor={newAuthor}
-            addNewTicket={addNewTicket}
-            open={open}
-            setOpen={setOpen}
-            handleCancel={handleCancel}
-            toggleAddTicketModal={toggleAddTicketModal}
-          />
-          <ProjectTicketComments
-            comments={comments}
-            commentChange={commentChange}
-            addNewComment={addNewComment}
-            newComment={newComment}
-          />
+      
+      { open && 
+          <section className="dashboard-project-modal">
+            <h2>Add A New Ticket</h2>
+            <form onSubmit={addNewTicket} autoComplete="off">
+              <label htmlFor="ticket-title">Ticket Title: </label>
+              <input 
+                type="text" 
+                id="ticket-title" 
+                name="ticket-title" 
+                value={newTitle}
+                onChange={titleChange}
+                required
+              />
+              <label htmlFor="description">Description: </label>
+              <input 
+                type="text" 
+                id="description" 
+                name="description" 
+                value={newDescription} 
+                onChange={descriptionChange}
+                required
+              />
+              {/* the following input will need to be pulled from whoever the user is - set by authContext*/}
+              <label htmlFor="author">Contributors: </label>
+              <input 
+                type="text" 
+                id="author" 
+                name="author" 
+                value={newAuthor}
+                onChange={authorChange}
+                required
+              />
+              <div className="dashboard-project-modal-btns">
+                <button className="submit-modalBtn" type="submit">Submit</button>
+                <button className="cancel-modalBtn" onClick={handleCancel}>Cancel</button>
+              </div>
+            </form>
+          </section>
+        }
+        
+        <div className={open ? "grayed-out" : undefined}>
+          <div className="projectboard-team-and-tickets">
+            <ProjectTeam
+              data={projects}
+            />
+            <ProjectTicketDescription />
+          </div>
+          <div className="projectboard-desc-and-comments">
+            <ProjectTickets 
+              tickets={tickets}
+              titleChange={titleChange}
+              newTitle={newTitle}
+              descriptionChange={descriptionChange}
+              newDescription={newDescription}
+              authorChange={authorChange}
+              newAuthor={newAuthor}
+              addNewTicket={addNewTicket}
+              open={open}
+              setOpen={setOpen}
+              handleCancel={handleCancel}
+              toggleAddTicketModal={toggleAddTicketModal}
+            />
+            <ProjectTicketComments
+              comments={comments}
+              commentChange={commentChange}
+              addNewComment={addNewComment}
+              newComment={newComment}
+            />
+          </div>
         </div>
       </div>
     </>

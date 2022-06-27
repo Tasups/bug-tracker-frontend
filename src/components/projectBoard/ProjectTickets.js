@@ -10,46 +10,6 @@ const ProjectTickets = (props) => {
    return (
      <section className="projecttickets-container">
 
-     { props.open && 
-          <section className="dashboard-project-modal">
-            <h2>Add A New Ticket</h2>
-            <form onSubmit={props.addNewTicket} autoComplete="off">
-              <label htmlFor="ticket-title">Ticket Title: </label>
-              <input 
-                type="text" 
-                id="ticket-title" 
-                name="ticket-title" 
-                value={props.newTitle}
-                onChange={props.titleChange}
-                required
-              />
-              <label htmlFor="description">Description: </label>
-              <input 
-                type="text" 
-                id="description" 
-                name="description" 
-                value={props.newDescription} 
-                onChange={props.descriptionChange}
-                required
-              />
-              {/* the following input will need to be pulled from whoever the user is - set by authContext*/}
-              <label htmlFor="author">Contributors: </label>
-              <input 
-                type="text" 
-                id="author" 
-                name="author" 
-                value={props.newAuthor}
-                onChange={props.authorChange}
-                required
-              />
-              <div className="dashboard-project-modal-btns">
-                <button className="submit-modalBtn" type="submit">Submit</button>
-                <button className="cancel-modalBtn" onClick={props.handleCancel}>Cancel</button>
-              </div>
-            </form>
-          </section>
-        }
-     
        <div className="projecttickets-title">
           <h4>Tickets</h4>
           <button onClick={props.toggleAddTicketModal}>
@@ -78,6 +38,7 @@ const ProjectTickets = (props) => {
            </tbody>
          </table>
        </div>
+       
      </section>
    );
  }
