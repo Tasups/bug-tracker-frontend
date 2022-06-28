@@ -33,7 +33,7 @@ const ProjectTicketDescription = (props) => {
           <p>{props.ticketForDescription.type}</p>
         </div>
         <div className="item-g ticketsdetails-infocard">
-          <h5>ETA in hours</h5>
+          <h5>Time to Complete</h5>
           <p>{props.ticketForDescription.ETA}</p>
         </div>
       </div>

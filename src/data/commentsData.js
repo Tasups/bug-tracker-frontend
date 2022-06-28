@@ -4,7 +4,7 @@ const commentsData = [
   {
     comment: "This is something to consider upping in the priority level. It needs to be at least important.",
     id: uuidv4(),
-    author: "Jason Whisnant",
+    author: "Ironhorse Johnson",
     date: "June 22nd, 2022"
   },
   {
@@ -16,7 +16,7 @@ const commentsData = [
   {
     comment: "It seems that the comments are working well in this system.",
     id: uuidv4(),
-    author: "William Whisnant",
+    author: "William Riker",
     date: "May 31st, 2022"
   },
   {

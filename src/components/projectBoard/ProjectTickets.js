@@ -8,27 +8,26 @@ const ProjectTickets = (props) => {
   
    return (
      <section className="projecttickets-container">
-
        <div className="projecttickets-title">
-          <h4>Tickets</h4>
-          <button onClick={props.toggleAddTicketModal}>
-            <FontAwesomeIcon className="faPlus-btn" icon={faPlus} />
-          </button>
+         <h4>Tickets</h4>
+         <button onClick={props.toggleAddTicketModal}>
+           <FontAwesomeIcon className="faPlus-btn" icon={faPlus} />
+         </button>
        </div>
        <div className="projecttickets-table">
          <table>
-            <tbody>
-              <tr>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Author</th>
-              </tr>
-            </tbody>
-          </table>
-          <table className="projecttickets-td">
-            <tbody>
-             {props.tickets?.map((ticket) => (
-               <tr key={ticket.id} onClick={props.handleTicketClick}>
+           <tbody>
+             <tr>
+               <th>Title</th>
+               <th>Description</th>
+               <th>Author</th>
+             </tr>
+           </tbody>
+         </table>
+         <table className="projecttickets-td">
+           <tbody>
+             {props.tickets?.map((ticket, key) => (
+               <tr onClick={e => props.handleTicketClick(e, key)} key={ticket.id}>
                  <td>{ticket.title}</td>
                  <td>{ticket.description}</td>
                  <td>{ticket.author}</td>
@@ -37,7 +36,6 @@ const ProjectTickets = (props) => {
            </tbody>
          </table>
        </div>
-       
      </section>
    );
  }

@@ -1,8 +1,8 @@
 const projectsData = [
   {
-    name: "Jason Whisnant",
-    email: "tasups@gmail.com",
-    phone: "828-712-5340"
+    name: "Alan Turing",
+    email: "turingitup@gmail.com",
+    phone: "098-765-4321"
   },
   {
     name: "Ada Lovelace",

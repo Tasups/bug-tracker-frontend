@@ -93,17 +93,16 @@ const ProjectBoard = () => {
     e.preventDefault()
     const newTicketComment = {
       comment: newComment,
-      author: "Jason", // the author would be the person who is logged in (as a default)
+      author: "Jason", // the author would be the person who is logged in
       date: dateConversion(),
       id: uuidv4,
     }
     setComments([...comments, newTicketComment])
   }
   
-  const handleTicketClick = (e) => {
-    e.preventDefault()
-    alert("clicked!")
-    console.log(e.target)
+  const handleTicketClick = (e, key) => {
+    console.log(e.target.id)
+    console.log('key index: ', key)
   }
   
   
@@ -226,7 +225,6 @@ const ProjectBoard = () => {
               tickets={tickets}
               handleCancel={handleCancel}
               toggleAddTicketModal={toggleAddTicketModal}
-              // selectTicket={handleClick}
               handleTicketClick={handleTicketClick}
             />
             <ProjectTicketComments
