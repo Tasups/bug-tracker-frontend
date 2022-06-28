@@ -1,8 +1,7 @@
  
 const ProjectTicketDescription = (props) => {
-  
 
-  return(
+  return (
     <section className="ticketsdetails-container">
       <div className="ticketsdetails-title">
         <h4>Selected Ticket Details</h4>
@@ -10,35 +9,35 @@ const ProjectTicketDescription = (props) => {
       <div className="ticketsdetails-info">
         <div className="item-a ticketsdetails-infocard">
           <h5>Ticket Title</h5>
-          <p>{props.ticketForDescription.title}</p>
+          <p>{props.title}</p>
         </div>
         <div className="item-b ticketsdetails-infocard">
           <h5>Author</h5>
-          <p>{props.ticketForDescription.author}</p>
+          <p>{props.author}</p>
         </div>
         <div className="item-c ticketsdetails-infocard">
           <h5>Description</h5>
-          <p>{props.ticketForDescription.description}</p>
+          <p>{props.description}</p>
         </div>
         <div className="item-d ticketsdetails-infocard">
           <h5>Status</h5>
-          <p>{props.ticketForDescription.status}</p>
+          <p>{props.status}</p>
         </div>
         <div className="item-e ticketsdetails-infocard">
           <h5>Priority</h5>
-          <p>{props.ticketForDescription.priority}</p>
+          <p>{props.priority}</p>
         </div>
         <div className="item-f ticketsdetails-infocard">
           <h5>Type</h5>
-          <p>{props.ticketForDescription.type}</p>
+          <p>{props.type}</p>
         </div>
         <div className="item-g ticketsdetails-infocard">
           <h5>Time to Complete</h5>
-          <p>{props.ticketForDescription.ETA}</p>
+          <p>{props.ETA}</p>
         </div>
       </div>
     </section>
-     )
+  );
  }
  
  export default ProjectTicketDescription;

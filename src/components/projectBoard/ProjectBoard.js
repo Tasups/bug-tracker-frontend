@@ -18,7 +18,7 @@ const ProjectBoard = () => {
   const [open, setOpen] = useState(false)
   const [projects, setProjects] = useState(projectsData)
   const [tickets, setTickets] = useState(ticketsData)
-  const [ticketForDescription, setTicketForDescription] = useState({})
+  const [ticketForDescription, setTicketForDescription] = useState()
   const [comments, setComments] = useState(commentsData)
   const [newComment, setNewComment] = useState("")
   const [newTitle, setNewTitle] = useState("")
@@ -60,10 +60,6 @@ const ProjectBoard = () => {
     setNewAuthor(e.target.value)
   }
 
-  // const handleTicketClick = (e) => {
-  //   setTicketForDescription()
-  // }
-
   const addNewTicket = (e) => {
     e.preventDefault()
     const newTicket = {
@@ -100,9 +96,10 @@ const ProjectBoard = () => {
     setComments([...comments, newTicketComment])
   }
   
-  const handleTicketClick = (e, key) => {
-    console.log(e.target.id)
-    console.log('key index: ', key)
+  const handleTicketClick = (e, id) => {
+    const newTicket = tickets.filter(ticket => ticket.id === id)
+    console.log(newTicket[0])
+    setTicketForDescription(newTicket[0])
   }
   
   

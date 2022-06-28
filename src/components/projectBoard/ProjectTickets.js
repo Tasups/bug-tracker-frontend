@@ -26,8 +26,11 @@ const ProjectTickets = (props) => {
          </table>
          <table className="projecttickets-td">
            <tbody>
-             {props.tickets?.map((ticket, key) => (
-               <tr onClick={e => props.handleTicketClick(e, key)} key={ticket.id}>
+             {props.tickets?.map((ticket) => (
+               <tr
+                 onClick={(e) => props.handleTicketClick(e, ticket.id)}
+                 key={ticket.id}
+               >
                  <td>{ticket.title}</td>
                  <td>{ticket.description}</td>
                  <td>{ticket.author}</td>
