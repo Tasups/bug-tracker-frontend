@@ -100,6 +100,9 @@ const ProjectBoard = () => {
     const newTicket = tickets.filter(ticket => ticket.id === id)
     let newTicketForDescription = newTicket[0]
     setTicketForDescription(newTicketForDescription)
+    let newComment = tickets.filter(ticket => ticket.id === id)
+    let newComments = newComment[0]
+    setComments(newComments.comments)
   }
   
   return(
