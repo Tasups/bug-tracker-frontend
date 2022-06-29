@@ -268,6 +268,7 @@ html,body {
   margin-left: 0;
   margin-right: 0;
   background-color: white;
+  border-right: solid 2px rgba(110, 104, 242, 0.5);
 }
 
 .sidenav-icon {
@@ -372,20 +373,21 @@ html,body {
 
 .dashboard-project-modal input[type=text], select {
   width: 100%;
-  padding: 0.5rem 20px;
-  margin: 8px 0;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
+  font-size: 1rem;
 }
 
 .dashboard-project-modal input[type=submit] {
   width: 100%;
   background-color: #4CAF50;
   color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
+  padding: 0.75rem 1rem;
+  margin: 0.5rem 0;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -405,7 +407,7 @@ html,body {
   margin: 0.25rem;
   padding: 0.25rem;
   cursor: pointer;
-  font-weight: 700;
+  font-weight: bold;
   border-radius: 5px;
 }
 
@@ -579,6 +581,107 @@ html,body {
   max-height: 30rem;
 }
 
+/* PROJECTBOARD MODAL FOR CREATING TICKETS ************************/
+
+.projectboard-ticket-modal {
+  position: absolute;
+  background-color: rgb(240,242,245);
+  z-index: 10;
+  min-height: 20rem;
+  width: 50%;
+  border: 3px solid rgba(110, 104, 242, 1);
+  border-radius: 10px;
+  left: 0;
+  right: 0;
+  margin: 1rem auto;
+}
+
+.projectboard-ticket-modal h2 {
+  color: rgba(110, 104, 242, 1);
+  font-weight: bold;
+  margin: 1rem;
+  text-align: center;
+}
+
+.projectboard-ticket-modal form {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 3rem;
+}
+
+.projectboard-ticket-modal label {
+  color: rgba(110, 104, 242, 1);
+  font-weight: bold;
+}
+
+.projectboard-ticket-modal input[type=text], select {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  margin: 0.25rem 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.projectboard-ticket-modal input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.projectboard-ticket-modal input[type=submit]:hover {
+  background-color: red;
+}
+
+.projectboard-ticket-modal input:last-of-type {
+  margin-bottom: 2rem;
+}
+
+.projectboard-ticket-modal button {
+  min-height: 3rem;
+  min-width: 7rem;
+  margin: 0.25rem;
+  padding: 0.25rem;
+  cursor: pointer;
+  font-weight: 900;
+  border-radius: 5px;
+}
+
+.projectboard-ticket-modal-btns {
+  display: flex;
+  justify-content: space-around;
+}
+
+.submit-modalBtn {
+  background-color: #6CDC03;
+  border: solid 3px #6CDC03;
+}
+
+.submit-modalBtn:hover {
+  background-color: #76EF04;
+  border: solid 3px #76EF04;
+}
+
+.cancel-modalBtn {
+  background-color: #EE2604;
+  border: solid 3px #EE2604;
+  color: white;
+}
+
+.cancel-modalBtn:hover {
+  background-color: #e85f48;
+  border: solid 3px #e85f48;
+}
+
+
+
 /* PROJECTTEAM CARD ***********************************************/
 
 .projectteam-container {
@@ -692,6 +795,10 @@ html,body {
   border: 3px solid rgba(36,27,242, 0.8);
   border-radius: 5px;
   transition: 0.3s ease-in-out;
+}
+
+.status-and-priority{
+  display: flex;
 }
 
 .projecttickets-td {
