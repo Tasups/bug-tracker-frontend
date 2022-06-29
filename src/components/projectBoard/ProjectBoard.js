@@ -18,7 +18,7 @@ const ProjectBoard = () => {
   const [open, setOpen] = useState(false)
   const [projects, setProjects] = useState(projectsData)
   const [tickets, setTickets] = useState(ticketsData)
-  const [ticketForDescription, setTicketForDescription] = useState()
+  const [ticketForDescription, setTicketForDescription] = useState(tickets[0])
   const [comments, setComments] = useState(commentsData)
   const [newComment, setNewComment] = useState("")
   const [newTitle, setNewTitle] = useState("")
@@ -28,6 +28,7 @@ const ProjectBoard = () => {
   const [newPriority, setNewPriority] = useState("")
   const [newType, setNewType] = useState("")
   const [newETA, setNewETA] = useState("")
+  
 
   const toggleAddTicketModal = () => {
     setOpen(prev => !prev)
@@ -74,7 +75,6 @@ const ProjectBoard = () => {
     }
     setTickets([...tickets, newTicket])
     // PLACE TO SEE IF THE ONCHANGE ANONYMOUS FUNCTION SET STATE OR NOT
-    setTicketForDescription(newTicket)
     setNewTitle("")
     setNewDescription("")
     setNewAuthor("")
@@ -98,10 +98,9 @@ const ProjectBoard = () => {
   
   const handleTicketClick = (e, id) => {
     const newTicket = tickets.filter(ticket => ticket.id === id)
-    console.log(newTicket[0])
-    setTicketForDescription(newTicket[0])
+    let newTicketForDescription = newTicket[0]
+    setTicketForDescription(newTicketForDescription)
   }
-  
   
   return(
     <>
