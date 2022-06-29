@@ -13,6 +13,38 @@ const ticketsData = [
     priority: "low",
     type: "bug",
     eta: "one quarter",
+    comments: [
+  {
+    comment: "This is the first comment, my friend",
+    id: uuidv4(),
+    author: "Ironhorse Johnson",
+    date: "June 22nd, 2022"
+  },
+  {
+    comment: "This is another comment, my butthole surfer.",
+    id: uuidv4(), 
+    author: "Ada Lovelace",
+    date: "June 13th, 2000"
+  },
+  {
+    comment: "It seems that the comments are working well in this system.",
+    id: uuidv4(),
+    author: "William Riker",
+    date: "May 31st, 2022"
+  },
+  {
+    comment: "there are only five or six different issues on the system.",
+    id: uuidv4(),
+    author: "Santa Claus",
+    date: "January 1st, 2022"
+  },
+  {
+    comment: "Going to consider a situation with a greater outcomes to the situation that we have to work with on this system.",
+    id: uuidv4(),
+    author: "Alan Turing",
+    date: "March 4th, 2022"
+  },
+  ]
   },
   {
     title: "ticket data",
@@ -24,6 +56,38 @@ const ticketsData = [
     priority: "normal",
     type: "feature",
     eta: "one month",
+    comments: [
+  {
+    comment: "This is the first comment of the ticket 'ticket data'",
+    id: uuidv4(),
+    author: "Ironhorse Johnson",
+    date: "June 22nd, 2022"
+  },
+  {
+    comment: "This is another comment, my butthole surfer.",
+    id: uuidv4(), 
+    author: "Ada Lovelace",
+    date: "June 13th, 2000"
+  },
+  {
+    comment: "It seems that the comments are working well in this system.",
+    id: uuidv4(),
+    author: "William Riker",
+    date: "May 31st, 2022"
+  },
+  {
+    comment: "there are only five or six different issues on the system.",
+    id: uuidv4(),
+    author: "Santa Claus",
+    date: "January 1st, 2022"
+  },
+  {
+    comment: "Going to consider a situation with a greater outcomes to the situation that we have to work with on this system.",
+    id: uuidv4(),
+    author: "Alan Turing",
+    date: "March 4th, 2022"
+  },
+  ]
   },
   {
     title: "authentication",
@@ -35,6 +99,38 @@ const ticketsData = [
     priority: "critical",
     type: "feature",
     eta: "one week",
+    comments: [
+  {
+    comment: "This is the first comment of the ticket 'authentication'",
+    id: uuidv4(),
+    author: "Ironhorse Johnson",
+    date: "June 22nd, 2022"
+  },
+  {
+    comment: "This is another comment, my butthole surfer.",
+    id: uuidv4(), 
+    author: "Ada Lovelace",
+    date: "June 13th, 2000"
+  },
+  {
+    comment: "It seems that the comments are working well in this system.",
+    id: uuidv4(),
+    author: "William Riker",
+    date: "May 31st, 2022"
+  },
+  {
+    comment: "there are only five or six different issues on the system.",
+    id: uuidv4(),
+    author: "Santa Claus",
+    date: "January 1st, 2022"
+  },
+  {
+    comment: "Going to consider a situation with a greater outcomes to the situation that we have to work with on this system.",
+    id: uuidv4(),
+    author: "Alan Turing",
+    date: "March 4th, 2022"
+  },
+  ]
   },
   {
     title: "more component pages?",
@@ -46,6 +142,38 @@ const ticketsData = [
     priority: "low",
     type: "bug",
     eta: "one day",
+    comments: [
+  {
+    comment: "This is the first comment of the ticket 'more component pages?'",
+    id: uuidv4(),
+    author: "Ironhorse Johnson",
+    date: "June 22nd, 2022"
+  },
+  {
+    comment: "This is another comment, my butthole surfer.",
+    id: uuidv4(), 
+    author: "Ada Lovelace",
+    date: "June 13th, 2000"
+  },
+  {
+    comment: "It seems that the comments are working well in this system.",
+    id: uuidv4(),
+    author: "William Riker",
+    date: "May 31st, 2022"
+  },
+  {
+    comment: "there are only five or six different issues on the system.",
+    id: uuidv4(),
+    author: "Santa Claus",
+    date: "January 1st, 2022"
+  },
+  {
+    comment: "Going to consider a situation with a greater outcomes to the situation that we have to work with on this system.",
+    id: uuidv4(),
+    author: "Alan Turing",
+    date: "March 4th, 2022"
+  },
+  ]
   },
   {
     title: "styling questions",
@@ -56,6 +184,38 @@ const ticketsData = [
     priority: "low",
     type: "feature",
     eta: "one month",
+    comments: [
+  {
+    comment: "This is the first comment of the ticket 'styling questions'",
+    id: uuidv4(),
+    author: "Ironhorse Johnson",
+    date: "June 22nd, 2022"
+  },
+  {
+    comment: "This is another comment, my butthole surfer.",
+    id: uuidv4(), 
+    author: "Ada Lovelace",
+    date: "June 13th, 2000"
+  },
+  {
+    comment: "It seems that the comments are working well in this system.",
+    id: uuidv4(),
+    author: "William Riker",
+    date: "May 31st, 2022"
+  },
+  {
+    comment: "there are only five or six different issues on the system.",
+    id: uuidv4(),
+    author: "Santa Claus",
+    date: "January 1st, 2022"
+  },
+  {
+    comment: "Going to consider a situation with a greater outcomes to the situation that we have to work with on this system.",
+    id: uuidv4(),
+    author: "Alan Turing",
+    date: "March 4th, 2022"
+  },
+  ]
   },
   {
     title: "deployment",
@@ -66,6 +226,38 @@ const ticketsData = [
     priority: "low",
     type: "bug",
     eta: "one month",
+    comments: [
+  {
+    comment: "This is the first comment of the ticket 'deployment'",
+    id: uuidv4(),
+    author: "Ironhorse Johnson",
+    date: "June 22nd, 2022"
+  },
+  {
+    comment: "This is another comment, my butthole surfer.",
+    id: uuidv4(), 
+    author: "Ada Lovelace",
+    date: "June 13th, 2000"
+  },
+  {
+    comment: "It seems that the comments are working well in this system.",
+    id: uuidv4(),
+    author: "William Riker",
+    date: "May 31st, 2022"
+  },
+  {
+    comment: "there are only five or six different issues on the system.",
+    id: uuidv4(),
+    author: "Santa Claus",
+    date: "January 1st, 2022"
+  },
+  {
+    comment: "Going to consider a situation with a greater outcomes to the situation that we have to work with on this system.",
+    id: uuidv4(),
+    author: "Alan Turing",
+    date: "March 4th, 2022"
+  },
+  ]
   },
 ];
   
