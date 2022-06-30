@@ -70,6 +70,14 @@ const ProjectBoard = () => {
       status: newStatus,
       priority: newPriority,
       type: newType,
+      comments: [
+        {
+          comment: `this is the first comment of the ${newTitle} ticket. Please consider writing more specific comments to describe what the ticket needs the development team to do.`,
+          id: uuidv4(),
+          author: `${newAuthor}`,
+          date: dateConversion(),
+        }
+      ],
       ETA: newETA,
       id: uuidv4()
     }
@@ -191,16 +199,6 @@ const ProjectBoard = () => {
                 <option value="one month">one month</option>
                 <option value="one quarter">one quarter</option>
               </select> 
-              {/* OLD CODE FOR CONSIDERATION IF SELECT DOESN'T WORK
-              <input 
-                type="text" 
-                id="eta" 
-                name="eta" 
-                value={newETA}
-                onChange={etaChange}
-                required
-              />
-              */}
               <div className="projectboard-ticket-modal-btns">
                 <button className="submit-modalBtn" type="submit">Submit</button>
                 <button className="cancel-modalBtn" onClick={handleCancel}>Cancel</button>

@@ -16,11 +16,11 @@ const ProjectCard = (props) => {
               <th>Description</th>
               <th>Contributors</th>
             </tr>
-            {props.projects?.map((el) => (
-              <tr key={el.projectTitle}>
-                <td>{el.projectTitle}</td>
-                <td>{el.description}</td>
-                <td>{el.contributors}</td>
+            {props.projects?.map((project) => (
+              <tr key={project.projectTitle}>
+                <td>{project.projectTitle}</td>
+                <td>{project.description}</td>
+                <td>{project.contributors}</td>
               </tr>
             ))}
           </tbody>
