@@ -1,14 +1,14 @@
-import { createContext, useState } from 'react'
+import { createContext } from 'react'
 
 
 const DataContext = createContext({})
 
 export const DataProvider = ({ children }) => {
-  
-  const [ data, setData ] = useState({})
-  
+    
   return(
-      <DataContext.Provider value={{data, setData}}>
+    <DataContext.Provider value={{
+        
+      }}>
         { children }
       </DataContext.Provider>
     ) 

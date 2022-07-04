@@ -21,7 +21,7 @@ const ticketsData = [
     date: "June 22nd, 2022"
   },
   {
-    comment: "This is another comment, my butthole surfer.",
+    comment: "This is another comment, my friend the surfer.",
     id: uuidv4(), 
     author: "Ada Lovelace",
     date: "June 13th, 2000"
