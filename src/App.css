@@ -342,7 +342,7 @@ html,body {
 
 .dashboard-project-modal {
   position: absolute;
-  background-color: rgba(36,27,242, 1);
+  background-color: rgb(240,242,245);
   z-index: 10;
   min-height: 20rem;
   width: 40%;
@@ -590,14 +590,14 @@ html,body {
   min-height: 20rem;
   width: 50%;
   border: 3px solid rgba(110, 104, 242, 1);
-  border-radius: 10px;
+  border-radius: 5px;
   left: 0;
   right: 0;
   margin: 1rem auto;
 }
 
 .projectboard-ticket-modal h2 {
-  color: rgba(110, 104, 242, 1);
+  color: rgba(36,27,242, 1);
   font-weight: bold;
   margin: 1rem;
   text-align: center;
@@ -610,7 +610,7 @@ html,body {
 }
 
 .projectboard-ticket-modal label {
-  color: rgba(110, 104, 242, 1);
+  color: rgba(36,27,242, 1);
   font-weight: bold;
 }
 
