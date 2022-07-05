@@ -8,19 +8,17 @@ const ProjectTicketComments = (props) => {
         <h4>Comments</h4>
       </div>
       <form>
-      <label htmlFor="comment" hidden="hidden">Comment</label>
-      <input 
-        type="text"
-        id="comment"
-        name="comment"
-        placeholder="write comment here"
-        onChange={props.commentChange}
-        value={props.newComment}
-        // value={lastName}
-        // onChange={lastNameChange}
-        required
-      />
-      <button onClick={props.addNewComment}>Comment</button>
+        <label htmlFor="comment" hidden="hidden">Comment</label>
+        <input 
+          required
+          type="text"
+          id="comment"
+          name="comment"
+          placeholder="write comment here"
+          onChange={props.commentChange}
+          value={props.newComment}
+        />
+        <button onClick={props.addNewComment}>Comment</button>
       </form>
       <div className="ticketcomments-comment-list">
           {

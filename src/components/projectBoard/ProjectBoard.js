@@ -9,7 +9,6 @@ import ProjectTicketComments from './ProjectTicketComments'
 
 import projectsData from '../../data/contributorsData'
 import ticketsData from '../../data/ticketsData'
-import commentsData from '../../data/commentsData'
 
 const { v4: uuidv4 } = require('uuid');
 
@@ -19,7 +18,7 @@ const ProjectBoard = () => {
   const [projects, setProjects] = useState(projectsData)
   const [tickets, setTickets] = useState(ticketsData)
   const [ticketForDescription, setTicketForDescription] = useState(tickets[0])
-  const [comments, setComments] = useState(commentsData)
+  const [comments, setComments] = useState(ticketsData[0].comments)
   const [newComment, setNewComment] = useState("")
   const [newTitle, setNewTitle] = useState("")
   const [newDescription, setNewDescription] = useState("")
@@ -29,7 +28,6 @@ const ProjectBoard = () => {
   const [newType, setNewType] = useState("")
   const [newETA, setNewETA] = useState("")
   
-
   const toggleAddTicketModal = () => {
     setOpen(prev => !prev)
   }
@@ -71,7 +69,16 @@ const ProjectBoard = () => {
       priority: newPriority,
       type: newType,
       ETA: newETA,
-      id: uuidv4()
+      id: uuidv4(),
+      comments: 
+      [
+        {
+          comment: "Please make comments to describe the ticket",
+          id: uuidv4(),
+          author: "Jason Whisnant",
+          date: dateConversion()
+        }
+      ]
     }
     setTickets([...tickets, newTicket])
     // PLACE TO SEE IF THE ONCHANGE ANONYMOUS FUNCTION SET STATE OR NOT
@@ -89,7 +96,7 @@ const ProjectBoard = () => {
     e.preventDefault()
     const newTicketComment = {
       comment: newComment,
-      author: "Jason", // the author would be the person who is logged in
+      author: "Jason Whisnant", // the author would be the person who is logged in
       date: dateConversion(),
       id: uuidv4,
     }
