@@ -1,6 +1,4 @@
 07/05/22
 
-ProjectBoard Comments needs to be refactored to pull from the ticketsData.js and not from the commentsData.js.
-
-This would require making sure to pull from the ticketsData and then push onto the ticketsData.comments array and would likely look like this: ticketsData.comments.push(""). The only issue is to make sure to target the correct state property. This will likely include redirecting where the comments are being pulled from in the state on that component or its parent, ProjectBoard.
+Next is to move state and such to Context
 

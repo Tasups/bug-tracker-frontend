@@ -118,7 +118,7 @@ const ProjectBoard = () => {
       <SideNav />
       
       <div className="projectboard-container">
-      
+  
       { open && 
           <section className="projectboard-ticket-modal">
             <h2>Add A New Ticket</h2>
@@ -160,7 +160,7 @@ const ProjectBoard = () => {
                 setNewStatus(newStatus)
               }}>
                 <option value="">select status</option>
-                <option value="open">open</option>
+                <option selected value="open">open</option>
                 <option value="closed">closed</option>
               </select>
               
@@ -171,7 +171,7 @@ const ProjectBoard = () => {
               }}>
                 <option value="">select priority</option>
                 <option value="low">low</option>
-                <option value="normal">normal</option>
+                <option selected value="normal">normal</option>
                 <option value="important">important</option>
                 <option value="critical">critical</option>
               </select>
@@ -184,7 +184,7 @@ const ProjectBoard = () => {
                 <option value="">select type</option>
                 <option value="bug">bug</option>
                 <option value="feature">feature</option>
-                <option value="issue">issue</option>
+                <option selected value="issue">issue</option>
               </select> 
               
               <label htmlFor="eta">ETA: </label>
@@ -194,7 +194,7 @@ const ProjectBoard = () => {
               }}>
                 <option value="">select time due</option>
                 <option value="one day">one day</option>
-                <option value="one week">one week</option>
+                <option selected value="one week">one week</option>
                 <option value="one month">one month</option>
                 <option value="one quarter">one quarter</option>
               </select> 
