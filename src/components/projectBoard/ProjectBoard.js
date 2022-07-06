@@ -112,6 +112,8 @@ const ProjectBoard = () => {
     setComments(newComments.comments)
   }
   
+  
+  
   return(
     <>
       <ProjectHeader />
