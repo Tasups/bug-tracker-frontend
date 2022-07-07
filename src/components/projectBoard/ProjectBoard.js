@@ -27,7 +27,7 @@ const ProjectBoard = () => {
   const [newPriority, setNewPriority] = useState("")
   const [newType, setNewType] = useState("")
   const [newETA, setNewETA] = useState("")
-  const [parentID, setParentID] = useState("")
+  // const [parentID, setParentID] = useState("")
 
   console.log(tickets)
   
@@ -102,10 +102,10 @@ const ProjectBoard = () => {
       date: dateConversion(),
       id: uuidv4,
     }
-    //setComments([...comments, newTicketComment])
-    const ticketToUpdate = tickets.filter((ticket) => ticket.id === id);
-    const updatedTicket = ticketToUpdate.comments.push(newTicketComment);
-    setTickets([...tickets, updatedTicket]);
+    setComments([...comments, newTicketComment])
+    // const ticketToUpdate = tickets.filter((ticket) => ticket.id === id);
+    // const updatedTicket = ticketToUpdate.comments.push(newTicketComment);
+    // setTickets([...tickets, updatedTicket]);
   }
 
 
