@@ -27,6 +27,9 @@ const ProjectBoard = () => {
   const [newPriority, setNewPriority] = useState("")
   const [newType, setNewType] = useState("")
   const [newETA, setNewETA] = useState("")
+  const [parentID, setParentID] = useState("")
+
+  console.log(tickets)
   
   const toggleAddTicketModal = () => {
     setOpen(prev => !prev)
@@ -68,14 +71,6 @@ const ProjectBoard = () => {
       status: newStatus,
       priority: newPriority,
       type: newType,
-      comments: [
-        {
-          comment: `this is the first comment of the ${newTitle} ticket. Please consider writing more specific comments to describe what the ticket needs the development team to do.`,
-          id: uuidv4(),
-          author: `${newAuthor}`,
-          date: dateConversion(),
-        }
-      ],
       ETA: newETA,
       id: uuidv4(),
       comments: 
@@ -89,7 +84,6 @@ const ProjectBoard = () => {
       ]
     }
     setTickets([...tickets, newTicket])
-    // PLACE TO SEE IF THE ONCHANGE ANONYMOUS FUNCTION SET STATE OR NOT
     setNewTitle("")
     setNewDescription("")
     setNewAuthor("")
@@ -100,7 +94,7 @@ const ProjectBoard = () => {
     toggleAddTicketModal()
   }
   
-  const addNewComment = (e) => {
+  const addNewComment = (e, id) => {
     e.preventDefault()
     const newTicketComment = {
       comment: newComment,
@@ -108,10 +102,15 @@ const ProjectBoard = () => {
       date: dateConversion(),
       id: uuidv4,
     }
-    setComments([...comments, newTicketComment])
+    //setComments([...comments, newTicketComment])
+    const ticketToUpdate = tickets.filter((ticket) => ticket.id === id);
+    const updatedTicket = ticketToUpdate.comments.push(newTicketComment);
+    setTickets([...tickets, updatedTicket]);
   }
-  
+
+
   const handleTicketClick = (e, id) => {
+    e.preventDefault()
     const newTicket = tickets.filter(ticket => ticket.id === id)
     let newTicketForDescription = newTicket[0]
     setTicketForDescription(newTicketForDescription)
