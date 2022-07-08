@@ -103,9 +103,20 @@ const ProjectBoard = () => {
     setComments([...comments, newTicketComment])
     setNewComment("");
     const ticketToUpdate = tickets.filter((ticket) => ticket.id === parentID);
-    const updatedTicket = ticketToUpdate[0].comments.push(newTicketComment);
-    //setTickets([...tickets, updatedTicket]);
+    const commentsArrayToModify = ticketToUpdate[0].comments;
+    const modifiedCommentsArray = commentsArrayToModify.push(newTicketComment);
+
+    const newTicketArray = tickets.map((ticket) => {
+      if (ticket.id === parentID) {
+        return { ...ticket, comments: modifiedCommentsArray };
+      }
+      return ticket;
+    });
+
+    setTickets(newTicketArray)
   }
+
+  
 
   const handleTicketClick = (e, id) => {
     e.preventDefault()
@@ -116,7 +127,9 @@ const ProjectBoard = () => {
     let newComments = newComment[0]
     setComments(newComments.comments)
     setParentID(id)
+    console.log(parentID)
   }
+
   
   return(
     <>
