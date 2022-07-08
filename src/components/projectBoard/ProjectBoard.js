@@ -27,9 +27,7 @@ const ProjectBoard = () => {
   const [newPriority, setNewPriority] = useState("")
   const [newType, setNewType] = useState("")
   const [newETA, setNewETA] = useState("")
-  // const [parentID, setParentID] = useState("")
-
-  console.log(tickets)
+  const [parentID, setParentID] = useState("")
   
   const toggleAddTicketModal = () => {
     setOpen(prev => !prev)
@@ -94,20 +92,20 @@ const ProjectBoard = () => {
     toggleAddTicketModal()
   }
   
-  const addNewComment = (e, id) => {
+  const addNewComment = (e) => {
     e.preventDefault()
     const newTicketComment = {
       comment: newComment,
       author: "Jason Whisnant", // the author would be the person who is logged in
       date: dateConversion(),
-      id: uuidv4,
+      id: uuidv4(),
     }
     setComments([...comments, newTicketComment])
-    // const ticketToUpdate = tickets.filter((ticket) => ticket.id === id);
-    // const updatedTicket = ticketToUpdate.comments.push(newTicketComment);
-    // setTickets([...tickets, updatedTicket]);
+    setNewComment("");
+    const ticketToUpdate = tickets.filter((ticket) => ticket.id === parentID);
+    const updatedTicket = ticketToUpdate[0].comments.push(newTicketComment);
+    //setTickets([...tickets, updatedTicket]);
   }
-
 
   const handleTicketClick = (e, id) => {
     e.preventDefault()
@@ -117,6 +115,7 @@ const ProjectBoard = () => {
     let newComment = tickets.filter(ticket => ticket.id === id)
     let newComments = newComment[0]
     setComments(newComments.comments)
+    setParentID(id)
   }
   
   return(
