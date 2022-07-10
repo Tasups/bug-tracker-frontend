@@ -1,6 +1,5 @@
 const { v4: uuidv4 } = require('uuid');
 
-// priority low, normal, important, critical
 
 const ticketsData = [
   {
