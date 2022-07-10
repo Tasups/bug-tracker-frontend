@@ -116,8 +116,6 @@ const ProjectBoard = () => {
     setTickets(newTicketArray)
   }
 
-  
-
   const handleTicketClick = (e, id) => {
     e.preventDefault()
     const newTicket = tickets.filter(ticket => ticket.id === id)

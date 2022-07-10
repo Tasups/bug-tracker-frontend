@@ -4,6 +4,7 @@ import Dashboard from './components/dashboard/Dashboard'
 import ProjectBoard from './components/projectBoard/ProjectBoard'
 import SignUp from './components/signup/SignUp'
 import SignIn from './components/SignIn'
+import Test from './test'
 
 import './App.css'
 
@@ -16,6 +17,7 @@ function App() {
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/projectboard" element={<ProjectBoard />} />
       <Route path="/signup" element={<SignUp />} />
+      <Route path="/test" element={<Test />} />
     </Routes>
   );
 }
