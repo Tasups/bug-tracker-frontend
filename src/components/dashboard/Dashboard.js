@@ -45,6 +45,9 @@ const Dashboard = () => {
       contributors: newContributors
     }
     setProjects([...projects, newProject])
+    setNewProjectTitle("")
+    setNewDescription("")
+    setNewContributors("")
     toggleAddProjectModal()
   }
   
