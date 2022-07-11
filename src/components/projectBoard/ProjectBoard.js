@@ -102,8 +102,8 @@ const ProjectBoard = () => {
     }
     setComments([...comments, newTicketComment])
     setNewComment("");
-    const ticketToUpdate = tickets.filter((ticket) => ticket.id === parentID);
-    const updatedTicket = ticketToUpdate[0].comments.push(newTicketComment);
+    // const ticketToUpdate = tickets.filter((ticket) => ticket.id === parentID);
+    // const updatedTicket = ticketToUpdate[0].comments.push(newTicketComment);
     //setTickets([...tickets, updatedTicket]);
   }
 

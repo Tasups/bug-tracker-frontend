@@ -2,6 +2,8 @@
 
 Need to make the addNewComment function to add to the list of comments in the ticketsData.comments array and not add to the commentsData state that has been set. Consider looking at the handleTicketClick function to grab the id.
 
-I think it may make more sense to set the state of all things tickets from the ticketsData store. Then pull down the comments and other things from that to centralize the data and not fracture the source of data by having a separate data-set to set state to. Thus, the ticket would have to be changed when making any changes, including the comments.
+I think it may make more sense to set the state of all things tickets from the ticketsData store. Then pull down the comments and other things from that to centralize the data and not fracture the source of data by having a separate data-set to set state to. Thus, the ticket would have to be changed when making any changes, including the comments.  
+
+Continuing to have problems with updating the tickets via the addComment function. This is due to the fact that a new ticket is being created with no body when using the spread syntax. This needs to be considered when using the database as trying to put all the information into a projects data store may be difficult to do. Currently watching the Schwarzenmuller(sp?) Udemy class on how to use MongoDB with at least two differing data sets (users and places).
 
 Next is to move state and such to Context
