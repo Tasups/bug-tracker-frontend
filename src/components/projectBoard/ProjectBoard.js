@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import SideNav from '../SideNav'
 import ProjectHeader from './ProjectHeader'
@@ -13,6 +13,26 @@ import ticketsData from '../../data/ticketsData'
 const { v4: uuidv4 } = require('uuid');
 
 const ProjectBoard = () => {
+
+  // useEffect(() => {
+  //   const fetchTickets = async () => {
+  //     const responseData = await sendRequest(
+  //       `http://localhost:5000/api/tickets/${projectId}`
+  //     )
+  //   }
+  // })
+
+  // useEffect(() => {
+  //   const fetchPlaces = async () => {
+  //     try {
+  //       const responseData = await sendRequest(
+  //         `http://localhost:5000/api/places/user/${userId}`
+  //       );
+  //       setLoadedPlaces(responseData.places);
+  //     } catch (err) {}
+  //   };
+  //   fetchPlaces();
+  // }, [sendRequest, userId]);
   
   const [open, setOpen] = useState(false)
   const [projects, setProjects] = useState(projectsData)
