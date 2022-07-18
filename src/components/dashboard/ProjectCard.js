@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 
 const ProjectCard = (props) => {
 
@@ -17,11 +18,13 @@ const ProjectCard = (props) => {
               <th>Contributors</th>
             </tr>
             {props.projects?.map((project) => (
-              <tr key={project.projectTitle}>
-                <td>{project.projectTitle}</td>
-                <td>{project.description}</td>
-                <td>{project.contributors}</td>
-              </tr>
+              //<Link to={`/projectBoard/${project.id}`}>
+                <tr key={project.projectTitle}>
+                  <td>{project.projectTitle}</td>
+                  <td>{project.description}</td>
+                  <td>{project.contributors}</td>
+                </tr>
+              //</Link>
             ))}
           </tbody>
         </table>

@@ -6,33 +6,15 @@ import ProjectTeam from './ProjectTeam'
 import ProjectTickets from './ProjectTickets'
 import ProjectTicketDescription from './ProjectTicketDescription'
 import ProjectTicketComments from './ProjectTicketComments'
+import { useParams } from 'react-router-dom';
 
 import projectsData from '../../data/contributorsData'
 import ticketsData from '../../data/ticketsData'
 
 const { v4: uuidv4 } = require('uuid');
+const axios = require('axios').default;
 
 const ProjectBoard = () => {
-
-  // useEffect(() => {
-  //   const fetchTickets = async () => {
-  //     const responseData = await sendRequest(
-  //       `http://localhost:5000/api/tickets/${projectId}`
-  //     )
-  //   }
-  // })
-
-  // useEffect(() => {
-  //   const fetchPlaces = async () => {
-  //     try {
-  //       const responseData = await sendRequest(
-  //         `http://localhost:5000/api/places/user/${userId}`
-  //       );
-  //       setLoadedPlaces(responseData.places);
-  //     } catch (err) {}
-  //   };
-  //   fetchPlaces();
-  // }, [sendRequest, userId]);
   
   const [open, setOpen] = useState(false)
   const [projects, setProjects] = useState(projectsData)
@@ -48,6 +30,28 @@ const ProjectBoard = () => {
   const [newType, setNewType] = useState("")
   const [newETA, setNewETA] = useState("")
   const [parentID, setParentID] = useState("")
+  
+  const projectId = useParams().userId;
+  
+  // fetch project data from the logic controller on the route
+  useEffect(() => {
+    const fetchProjectById = async () => {
+      const { projectData } = await axios.get(`http://localhost:5000/api/v1/projects/${projectId}`)
+      console.log(projectData.project)
+      setProjects(projectData.project)
+    }
+    fetchProjectById().cath(console.error)
+  }, [projectId])
+  
+  // fetch ticket data from the particular project
+  useEffect(() => {
+    const fetchTicket = async () => {
+      const ticketData = await axios.get(`http://localhost:5000/api/v1/projects/${projectId}`)
+      console.log(ticketData.tickets)
+      setTickets(ticketData.tickets)
+    }
+    fetchTicket().catch(console.error)
+  }, [projectId])
   
   const toggleAddTicketModal = () => {
     setOpen(prev => !prev)
@@ -90,17 +94,22 @@ const ProjectBoard = () => {
       priority: newPriority,
       type: newType,
       eta: newETA,
-      id: uuidv4(),
+      // id: uuidv4(),
       comments: 
       [
         {
           comment: "Please make comments to describe the ticket",
-          id: uuidv4(),
           author: "Jason Whisnant",
           date: dateConversion()
         }
       ]
     }
+    // USE WHEN HOOKED UP TO THE BACKEND
+    // await axios.post(`http://localhost:5000/api/v1/projectboard/`, {
+    //   newProject
+    // }).then((response) => console.log(response))
+    //   .then((error) => console.log(error))
+      
     setTickets([...tickets, newTicket])
     setNewTitle("")
     setNewDescription("")
