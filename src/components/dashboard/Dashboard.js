@@ -42,7 +42,8 @@ const Dashboard = () => {
       key: newProjectTitle,
       projectTitle: newProjectTitle,
       description: newDescription,
-      contributors: newContributors
+      contributors: newContributors,
+      tickets: [],
     }
     setProjects([...projects, newProject])
     setNewProjectTitle("")

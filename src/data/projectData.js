@@ -7,8 +7,8 @@ export const issues = [
     id: 1,
   },
   {
-    projectTitle: "Store App",
-    description: "Make a copy of Amazon or Etsy or something",
+    projectTitle: "Movable blocks",
+    description: "use movable blocks such as what was used in the new color palette via react-sortable-hoc",
     contributors: "Alan Turing",
     id: 2,
   },
