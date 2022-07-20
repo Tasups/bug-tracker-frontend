@@ -21,7 +21,7 @@ const ticketsData = [
     date: "June 22nd, 2022"
   },
   {
-    comment: "This is another comment, my butthole surfer.",
+    comment: "This is another comment, my friend surfer.",
     id: uuidv4(), 
     author: "Ada Lovelace",
     date: "June 13th, 2000"
@@ -64,7 +64,7 @@ const ticketsData = [
     date: "June 22nd, 2022"
   },
   {
-    comment: "This is another comment, my butthole surfer.",
+    comment: "This is another comment, my another surfer.",
     id: uuidv4(), 
     author: "Ada Lovelace",
     date: "June 13th, 2000"
@@ -107,7 +107,7 @@ const ticketsData = [
     date: "June 22nd, 2022"
   },
   {
-    comment: "This is another comment, my butthole surfer.",
+    comment: "This is another comment, my one surfer.",
     id: uuidv4(), 
     author: "Ada Lovelace",
     date: "June 13th, 2000"
@@ -150,7 +150,7 @@ const ticketsData = [
     date: "June 22nd, 2022"
   },
   {
-    comment: "This is another comment, my butthole surfer.",
+    comment: "This is another comment, my significant other surfer.",
     id: uuidv4(), 
     author: "Ada Lovelace",
     date: "June 13th, 2000"
@@ -192,7 +192,7 @@ const ticketsData = [
     date: "June 22nd, 2022"
   },
   {
-    comment: "This is another comment, my butthole surfer.",
+    comment: "This is another comment, my surfer.",
     id: uuidv4(), 
     author: "Ada Lovelace",
     date: "June 13th, 2000"
@@ -234,7 +234,7 @@ const ticketsData = [
     date: "June 22nd, 2022"
   },
   {
-    comment: "This is another comment, my butthole surfer.",
+    comment: "This is another comment, my friend surfer.",
     id: uuidv4(), 
     author: "Ada Lovelace",
     date: "June 13th, 2000"

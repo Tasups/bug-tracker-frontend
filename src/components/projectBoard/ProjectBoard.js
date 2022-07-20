@@ -15,6 +15,7 @@ const { v4: uuidv4 } = require('uuid');
 const ProjectBoard = () => {
   
   const [open, setOpen] = useState(false)
+  // eslint-disable-next-line
   const [projects, setProjects] = useState(projectsData)
   const [tickets, setTickets] = useState(ticketsData)
   const [ticketForDescription, setTicketForDescription] = useState(tickets[0])
@@ -102,7 +103,9 @@ const ProjectBoard = () => {
     }
     setComments([...comments, newTicketComment])
     setNewComment("");
+    // eslint-disable-next-line
     const ticketToUpdate = tickets.filter((ticket) => ticket.id === parentID);
+    // eslint-disable-next-line
     const updatedTicket = ticketToUpdate[0].comments.push(newTicketComment);
     //setTickets([...tickets, updatedTicket]);
   }
