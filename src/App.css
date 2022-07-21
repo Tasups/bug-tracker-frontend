@@ -481,6 +481,27 @@ html,body {
   transition: 0.3s ease-in-out;
 }
 
+.projectcard-grid {
+  display: grid;
+  width: 750px;
+  height: 600px;
+  grid-template-columns: 12.5rem 4fr 1fr;
+  grid-template-rows: 80px 1fr 1fr 120px;
+  grid-gap: 0.5rem;
+  grid-template-areas:
+      "projectcard-headings projectcard-headings projectcard-headings"
+      "sidebar content-1 content-1"
+      "sidebar content-2 content-3"
+      "footer footer footer";
+}
+
+.projectcard-headings {
+  display: flex;
+  justify-content: space-between;
+  min-width: 100%;
+  background-color: #e85f48;
+}
+
 .projectcard-table table {
   margin: 0.4rem auto;
   text-align: center;
@@ -495,11 +516,7 @@ html,body {
   font-weight: bold;
 }
 
-.projectcard-table td {
-  text-align: left;
-}
-
-.projectcard-table th, .projectcard-table td {
+.projectcard-table th {
   padding: 0.5rem 0.5rem;
 }
 
@@ -509,6 +526,16 @@ html,body {
 
 .projectcard-table tr:last-of-type {
   border-bottom: 4px solid rgba(36,27,242, 0.15);
+}
+
+.projectcard-cardlink {
+  display: flex;
+  background-color: lightblue;
+  min-width: 100%;
+}
+
+.projectcard-link {
+  margin: 1rem;
 }
 
 /* TICKET CARDS ***************************************************/
