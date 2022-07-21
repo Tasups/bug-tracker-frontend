@@ -74,8 +74,9 @@ const SignUp = () => {
             />
             <button>Submit</button>
         </form>
-        <Link to="/dashboard">Dashboard</Link>
-        <Link to="/projectboard">ProjectBoard</Link>
+        <div>
+          Need to <Link to="/">Sign In</Link>?
+        </div>
         <p>&copy; 2022 Jason Whisnant</p>
       </div>
         

@@ -12,18 +12,17 @@ const SideNav = () => {
       </div>
       <div className="sidenav-menu">
         <ul>
-          <li>Dashboard</li>
-          <li>Tickets</li>
-          <li>Administration</li>
+          <li>
+            <Link to="/dashboard" className="sidenav-navbtn">Dashboard</Link>
+          </li>
+          <li className="sidenav-navbtn">Tickets</li>
+          <li className="sidenav-navbtn">Admin</li>
         </ul>
       </div>
       <div className="sidenav-button">
-          <button>Log Out</button>
-      </div>
-      <div className="test-links">
-        <Link to="/">Home</Link>
-        <Link to="/dashboard">Dashboard</Link>
-        <Link to="/projectboard">ProjectBoard</Link>
+          <button>
+            <Link to="/" className="sidenav-linkbtn">Log Out</Link>
+          </button>
       </div>
       <div className="copyright">
         <p>&copy; 2022 Jason Whisnant</p>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 
 const ProjectCard = (props) => {
 
@@ -18,7 +19,13 @@ const ProjectCard = (props) => {
             </tr>
             {props.projects?.map((project) => (
               <tr key={project.projectTitle}>
-                <td>{project.projectTitle}</td>
+                <td>
+                  <button className="projectcard-link-btn">
+                    <Link to="/projectboard" className="projectcard-link">
+                      {project.projectTitle}
+                    </Link>
+                  </button>
+                </td>
                 <td>{project.description}</td>
                 <td>{project.contributors}</td>
               </tr>
