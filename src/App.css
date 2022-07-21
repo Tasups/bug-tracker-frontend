@@ -530,6 +530,7 @@ html,body {
 .projectcard-link {
   text-decoration: none;
   color: white;
+  padding: .25rem;
 }
 
 .projectcard-link-btn {

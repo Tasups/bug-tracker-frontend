@@ -16,7 +16,7 @@ const SideNav = () => {
             <Link to="/dashboard" className="sidenav-navbtn">Dashboard</Link>
           </li>
           <li className="sidenav-navbtn">Tickets</li>
-          <li className="sidenav-navbtn">Administration</li>
+          <li className="sidenav-navbtn">Admin</li>
         </ul>
       </div>
       <div className="sidenav-button">

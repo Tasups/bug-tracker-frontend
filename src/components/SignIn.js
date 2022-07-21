@@ -1,6 +1,12 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 const SignIn = () => {
+  
+  useEffect(() => {
+    alert("Please keep in mind, this is a work in progress. For recommendations email me at tasups@gmail.com or visit my LinkedIn profile at https://www.linkedin.com/in/jason-whisnant/. Thank you for any helpful advice! Sincerely, Jason")
+  }, [])
+  
   return(
     <div className="auth-container">
       <div className="auth-title">
