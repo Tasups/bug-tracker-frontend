@@ -30,14 +30,12 @@ const SignIn = () => {
               // onChange={lastNameChange}
               required
             />
-            <button>Submit</button>
+            <button>
+              <Link to="/dashboard" className="signin-submit">Submit</Link>
+            </button>
         </form>
         <div className="auth-card-signup">
           <p>Can't sign in? <Link to="/signup">Sign up.</Link></p>
-        </div>
-        <div className="auth-card-footer">
-          <Link className="auth-card-links" to="/dashboard">Dashboard</Link>
-          <Link className="auth-card-links" to="/projectboard">ProjectBoard</Link>
         </div>
           <p>&copy; 2022 Jason Whisnant</p>
       </div>

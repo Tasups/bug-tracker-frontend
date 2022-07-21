@@ -215,6 +215,11 @@ html,body {
   transition: ease-in-out 0.2s;
 }
 
+.signin-submit {
+  text-decoration: none;
+  color: white;
+}
+
 /* HEADER *********************************************************/
 
 .header-container {
@@ -309,6 +314,17 @@ html,body {
 .sidenav-button button:hover {
   background-color: #e85f48;
   border: solid 2px #e85f48;
+}
+
+.sidenav-linkbtn {
+  text-decoration: none;
+  color: white;
+}
+
+.sidenav-navbtn {
+  text-decoration: none;
+  color: black;
+  font-size: medium;
 }
 
 .test-links {
@@ -509,6 +525,24 @@ html,body {
 
 .projectcard-table tr:last-of-type {
   border-bottom: 4px solid rgba(36,27,242, 0.15);
+}
+
+.projectcard-link {
+  text-decoration: none;
+  color: white;
+}
+
+.projectcard-link-btn {
+  margin: 0;
+  padding: 0.25rem;
+  background-color: rgba(36,27,242, 0.75);
+  border: 1px solid  rgba(36,27,242, 0.75);
+  border-radius: 0.25rem;
+}
+
+.projectcard-link-btn:hover {
+  background-color: rgba(36,27,242, 0.55);
+  border-color:  rgba(36,27,242, 0.55);
 }
 
 /* TICKET CARDS ***************************************************/
