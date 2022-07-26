@@ -30,4 +30,4 @@ export default App;
   // // will need to change to BACKEND_API when ready
   // useEffect(() => {
   //   setIssues(data)
-  // }, [])
+  // }, [data])
