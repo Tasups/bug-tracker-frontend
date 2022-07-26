@@ -20,7 +20,7 @@ const ProjectCard = (props) => {
           <div key={project.projectTitle} className="projectcard-cardlink">
             {/* THE LINK BELOW SHOULD BE DYNAMIC AND LOOK SOMETHING LIKE THIS to={`/${props}/projectboard`} */}
             <Link to="/projectboard">
-              <div className="projectcard-link ${project.}">{project.projectTitle}</div>
+              <div className="projectcard-link">{project.projectTitle}</div>
             </Link>
             <div className="projectcard-link">{project.description}</div>
             <div className="projectcard-link">{project.contributors}</div>
