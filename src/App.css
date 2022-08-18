@@ -797,7 +797,8 @@ html,body {
   -webkit-box-shadow: 5px 5px 15px 3px rgba(0,0,0,0.36); 
   box-shadow: 5px 5px 15px 3px rgba(0,0,0,0.36);
   max-width: 43%;
-  max-height: 26rem;
+  max-height: 25rem;
+  overflow: hidden;
 }
 
 .projecttickets-title {
@@ -1011,6 +1012,7 @@ html,body {
 }
 
 .ticketsdetails-title button {
+  text-decoration: none;
   background-color: rgba(36,27,242, 1);
   color: white;
   margin: 0 1rem;
@@ -1025,6 +1027,12 @@ html,body {
   border: 3px solid rgba(36,27,242, 0.8);
   border-radius: 5px;
   transition: 0.3s ease-in-out;
+}
+
+.ticketsdetails-link {
+  text-decoration: none;
+  color: white;
+  padding: .25rem;
 }
 
 .ticketsdetails-info {
@@ -1112,7 +1120,8 @@ html,body {
   -webkit-box-shadow: 5px 5px 15px 3px rgba(0,0,0,0.36); 
   box-shadow: 5px 5px 15px 3px rgba(0,0,0,0.36);
   min-width: 50%;
-  max-height: 26rem;
+  height: 25rem;
+  overflow: hidden;
 }
 
 .ticketcomments-title {
@@ -1187,4 +1196,14 @@ html,body {
 
 .commentcard-container h5 {
   margin: 0.5rem 0;
+}
+
+/* TICKETSBOARD ***************************************************/
+
+.ticketsboard-container {
+  position: absolute;
+  left: 16vw;
+  width: 84vw;
+  min-height: 80vh;
+  background-color: rgb(240,242,245);
 }

@@ -1,11 +1,16 @@
- 
+import { Link } from 'react-router-dom'
+
 const ProjectTicketDescription = (props) => {
 
   return (
     <section className="ticketsdetails-container">
       <div className="ticketsdetails-title">
         <h4>Selected Ticket Details</h4>
-        <button>Go To Ticket</button>
+        <button>
+          <Link className="ticketsdetails-link" to="/ticketsboard">
+            Go To Ticket
+          </Link>
+        </button>
       </div>
       <div className="ticketsdetails-info">
         <div className="item-a ticketsdetails-infocard">
