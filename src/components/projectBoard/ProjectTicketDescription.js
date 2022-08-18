@@ -5,6 +5,7 @@ const ProjectTicketDescription = (props) => {
     <section className="ticketsdetails-container">
       <div className="ticketsdetails-title">
         <h4>Selected Ticket Details</h4>
+        <button>Go To Ticket</button>
       </div>
       <div className="ticketsdetails-info">
         <div className="item-a ticketsdetails-infocard">
