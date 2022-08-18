@@ -1188,3 +1188,13 @@ html,body {
 .commentcard-container h5 {
   margin: 0.5rem 0;
 }
+
+/* TICKETSBOARD ***************************************************/
+
+.ticketsboard-container {
+  position: absolute;
+  left: 16vw;
+  width: 84vw;
+  min-height: 80vh;
+  background-color: rgb(240,242,245);
+}

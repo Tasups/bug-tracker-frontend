@@ -16,6 +16,7 @@ const ProjectBoard = () => {
   
   const [open, setOpen] = useState(false)
   // eslint-disable-next-line
+  
   const [projects, setProjects] = useState(projectsData)
   const [tickets, setTickets] = useState(ticketsData)
   const [ticketForDescription, setTicketForDescription] = useState(tickets[0])
@@ -121,8 +122,6 @@ const ProjectBoard = () => {
     setParentID(id)
   }
   
-  
-  
   return(
     <>
       <ProjectHeader />
@@ -225,6 +224,7 @@ const ProjectBoard = () => {
             />
             <ProjectTicketDescription 
               ticketForDescription={ticketForDescription}
+              handleTicketClick={handleTicketClick}
             />
           </div>
           <div className="projectboard-desc-and-comments">
