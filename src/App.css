@@ -797,7 +797,8 @@ html,body {
   -webkit-box-shadow: 5px 5px 15px 3px rgba(0,0,0,0.36); 
   box-shadow: 5px 5px 15px 3px rgba(0,0,0,0.36);
   max-width: 43%;
-  max-height: 26rem;
+  max-height: 25rem;
+  overflow: hidden;
 }
 
 .projecttickets-title {
@@ -1119,7 +1120,8 @@ html,body {
   -webkit-box-shadow: 5px 5px 15px 3px rgba(0,0,0,0.36); 
   box-shadow: 5px 5px 15px 3px rgba(0,0,0,0.36);
   min-width: 50%;
-  max-height: 26rem;
+  height: 25rem;
+  overflow: hidden;
 }
 
 .ticketcomments-title {
