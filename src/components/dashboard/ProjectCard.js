@@ -21,7 +21,9 @@ const ProjectCard = (props) => {
               <tr key={project.projectTitle}>
                 <td>
                   <button className="projectcard-link-btn">
-                    <Link to="/projectboard" className="projectcard-link">
+                    <Link to="/projectboard"
+                      /* use this instead when routing dynamically; use the project id  {`/projectboard/${props.id}`} */
+                      className="projectcard-link">
                       {project.projectTitle}
                     </Link>
                   </button>
