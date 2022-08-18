@@ -1,14 +1,11 @@
 import { useContext } from 'react'
 import DataContext from '../../context/DataContext'
-//import DataContext from '../../context/DataContext'
 import SideNav from '../SideNav'
 import Header from '../Header'
 import ProjectCard from './ProjectCard'
 import TixByPriority from './TixByPriority'
 import TixByType from './TixByType'
 import TixByStatus from './TixByStatus'
-
-//import { issues } from '../../data/projectData';
 
 const Dashboard = () => {
   
@@ -25,73 +22,6 @@ const Dashboard = () => {
     projDescChange, 
     projContributorsChange
   } = useContext(DataContext)
-  // can useContext to import data from db
-  // const [ data, setData ] = useContext(DataContext);
-
-  // const [open, setOpen] = useState(false);
-  // const [projects, setProjects] = useState(issues);
-  // const [newProjTitle, setNewProjTitle] = useState("");
-  // const [newProjDescription, setNewProjDescription] = useState("");
-  // const [newProjContributors, setNewProjContributors] = useState("");
-
-  /*
-  GET PROJECTS BASED UPON THE USER ID
-  useEffect(() => {
-    const fetchPlaces = async () => {
-      try {
-        const responseData = await sendRequest(
-          `http://localhost:5000/api/places/user/${userId}`
-        );
-        setLoadedPlaces(responseData.places);
-      } catch (err) {}
-    };
-    fetchPlaces();
-  }, [sendRequest, userId]);
-
-  */
-
-  // const toggleAddProjectModal = () => {
-  //   setOpen((prev) => !prev);
-  // };
-
-  // const projectChange = (e) => {
-  //   setNewProjTitle(e.target.value);
-  // };
-
-  // const descriptionChange = (e) => {
-  //   setNewProjDescription(e.target.value);
-  // };
-
-  // const contributorsChange = (e) => {
-  //   setNewProjContributors(e.target.value);
-  // };
-
-  // const addNewProject = (e) => {
-  //   e.preventDefault();
-  //   const newProject = {
-  //     key: newProjTitle,
-  //     projectTitle: newProjTitle,
-  //     description: newProjDescription,
-  //     contributors: newProjContributors,
-  //   };
-  //   setProjects([...projects, newProject]);
-  //   setNewProjTitle("");
-  //   setNewProjDescription("");
-  //   setNewProjContributors("");
-  //   toggleAddProjectModal();
-  // };
-
-  // const handleProjCancel = () => {
-  //   setNewProjTitle("");
-  //   setNewProjDescription("");
-  //   setNewProjContributors("");
-  //   toggleAddProjectModal();
-  // };
-
-  // const handleProjSubmit = (e) => {
-  //   e.preventDefault();
-  //   addNewProject(e);
-  // };
   
   return (
     <>
