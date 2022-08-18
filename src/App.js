@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-
+import { DataProvider } from './context/DataContext'
 import Dashboard from './components/dashboard/Dashboard'
 import ProjectBoard from './components/projectBoard/ProjectBoard'
 import SignUp from './components/signup/SignUp'
@@ -7,16 +7,17 @@ import SignIn from './components/SignIn'
 
 import './App.css'
 
-
 function App() {
 
   return (
-    <Routes>
-      <Route path="/" element={<SignIn />} />
-      <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/projectboard" element={<ProjectBoard />} />
-      <Route path="/signup" element={<SignUp />} />
-    </Routes>
+    <DataProvider>
+      <Routes>
+        <Route path="/" element={<SignIn />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/projectboard" element={<ProjectBoard />} />
+        <Route path="/signup" element={<SignUp />} />
+      </Routes>
+    </DataProvider>
   );
 }
 

@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useContext } from 'react'
+import DataContext from '../../context/DataContext'
 //import DataContext from '../../context/DataContext'
 import SideNav from '../SideNav'
 import Header from '../Header'
@@ -7,17 +8,31 @@ import TixByPriority from './TixByPriority'
 import TixByType from './TixByType'
 import TixByStatus from './TixByStatus'
 
-import { issues } from '../../data/projectData';
+//import { issues } from '../../data/projectData';
 
 const Dashboard = () => {
+  
+  const {
+    open, 
+    projects, 
+    newProjTitle,
+    newProjDescription,
+    newProjContributors,
+    toggleAddProjectModal,
+    handleProjCancel,
+    handleProjSubmit,
+    projectChange,
+    projDescChange, 
+    projContributorsChange
+  } = useContext(DataContext)
   // can useContext to import data from db
   // const [ data, setData ] = useContext(DataContext);
 
-  const [open, setOpen] = useState(false);
-  const [projects, setProjects] = useState(issues);
-  const [newProjectTitle, setNewProjectTitle] = useState("");
-  const [newDescription, setNewDescription] = useState("");
-  const [newContributors, setNewContributors] = useState("");
+  // const [open, setOpen] = useState(false);
+  // const [projects, setProjects] = useState(issues);
+  // const [newProjTitle, setNewProjTitle] = useState("");
+  // const [newProjDescription, setNewProjDescription] = useState("");
+  // const [newProjContributors, setNewProjContributors] = useState("");
 
   /*
   GET PROJECTS BASED UPON THE USER ID
@@ -35,64 +50,64 @@ const Dashboard = () => {
 
   */
 
-  const toggleAddProjectModal = () => {
-    setOpen((prev) => !prev);
-  };
+  // const toggleAddProjectModal = () => {
+  //   setOpen((prev) => !prev);
+  // };
 
-  const projectChange = (e) => {
-    setNewProjectTitle(e.target.value);
-  };
+  // const projectChange = (e) => {
+  //   setNewProjTitle(e.target.value);
+  // };
 
-  const descriptionChange = (e) => {
-    setNewDescription(e.target.value);
-  };
+  // const descriptionChange = (e) => {
+  //   setNewProjDescription(e.target.value);
+  // };
 
-  const contributorsChange = (e) => {
-    setNewContributors(e.target.value);
-  };
+  // const contributorsChange = (e) => {
+  //   setNewProjContributors(e.target.value);
+  // };
 
-  const addNewProject = (e) => {
-    e.preventDefault();
-    const newProject = {
-      key: newProjectTitle,
-      projectTitle: newProjectTitle,
-      description: newDescription,
-      contributors: newContributors,
-    };
-    setProjects([...projects, newProject]);
-    setNewProjectTitle("");
-    setNewDescription("");
-    setNewContributors("");
-    toggleAddProjectModal();
-  };
+  // const addNewProject = (e) => {
+  //   e.preventDefault();
+  //   const newProject = {
+  //     key: newProjTitle,
+  //     projectTitle: newProjTitle,
+  //     description: newProjDescription,
+  //     contributors: newProjContributors,
+  //   };
+  //   setProjects([...projects, newProject]);
+  //   setNewProjTitle("");
+  //   setNewProjDescription("");
+  //   setNewProjContributors("");
+  //   toggleAddProjectModal();
+  // };
 
-  const handleCancel = () => {
-    setNewProjectTitle("");
-    setNewDescription("");
-    setNewContributors("");
-    toggleAddProjectModal();
-  };
+  // const handleProjCancel = () => {
+  //   setNewProjTitle("");
+  //   setNewProjDescription("");
+  //   setNewProjContributors("");
+  //   toggleAddProjectModal();
+  // };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    addNewProject(e);
-  };
-
+  // const handleProjSubmit = (e) => {
+  //   e.preventDefault();
+  //   addNewProject(e);
+  // };
+  
   return (
     <>
-      <Header projects={projects[0].contributors} />
+      <Header />
       <SideNav />
       <main className="dashboard-container">
         {open && (
           <section className="dashboard-project-modal">
             <h2>Add A New Project</h2>
-            <form onSubmit={handleSubmit} autoComplete="off">
+            <form onSubmit={handleProjSubmit} autoComplete="off">
               <label htmlFor="projectname">Project Name: </label>
               <input
                 type="text"
                 id="projectname"
                 name="projectname"
-                value={newProjectTitle}
+                value={newProjTitle}
                 onChange={projectChange}
                 required
               />
@@ -101,8 +116,8 @@ const Dashboard = () => {
                 type="text"
                 id="description"
                 name="description"
-                value={newDescription}
-                onChange={descriptionChange}
+                value={newProjDescription}
+                onChange={projDescChange}
                 required
               />
               {/* the following input will need to be dynamic to capture all available contributors*/}
@@ -111,15 +126,15 @@ const Dashboard = () => {
                 type="text"
                 id="contributors"
                 name="contributors"
-                value={newContributors}
-                onChange={contributorsChange}
+                value={newProjContributors}
+                onChange={projContributorsChange}
                 required
               />
               <div className="dashboard-project-modal-btns">
                 <button className="submit-modalBtn" type="submit">
                   Submit
                 </button>
-                <button className="cancel-modalBtn" onClick={handleCancel}>
+                <button className="cancel-modalBtn" onClick={handleProjCancel}>
                   Cancel
                 </button>
               </div>
