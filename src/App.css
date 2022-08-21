@@ -1205,6 +1205,11 @@ html,body {
   background-color: rgb(240,242,245);
 }
 
+.ticketsboard-tixfordesc{
+  width: 40rem;
+  min-height: 15rem;
+}
+
 .ticketsboard-comments {
   width: 60rem;
 }

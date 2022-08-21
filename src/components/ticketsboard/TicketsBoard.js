@@ -21,9 +21,11 @@ const TicketsBoard = () => {
       <ProjectHeader />
       <SideNav />
       <div className="ticketsboard-container">
-        <ProjectTicketDescription
-          ticketForDescription={ticketForDescription}
-        />
+        <div className="ticketsboard-tixfordesc">
+          <ProjectTicketDescription
+            ticketForDescription={ticketForDescription}
+          />
+        </div>
         <div className="ticketsboard-comments">
           <ProjectTicketComments
             comments={comments}
