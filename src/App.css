@@ -1027,6 +1027,12 @@ html,body {
   transition: 0.3s ease-in-out;
 }
 
+.ticketsdetails-link {
+  text-decoration: none;
+  color: white;
+  padding: .25rem;
+}
+
 .ticketsdetails-info {
   display: grid;
   grid-columns: repeat(4, 3rem [col-start]);
@@ -1187,4 +1193,18 @@ html,body {
 
 .commentcard-container h5 {
   margin: 0.5rem 0;
+}
+
+/* TICKETSBOARD ***************************************************/
+
+.ticketsboard-container {
+  position: absolute;
+  left: 16vw;
+  width: 84vw;
+  min-height: 80vh;
+  background-color: rgb(240,242,245);
+}
+
+.ticketsboard-comments {
+  width: 60rem;
 }

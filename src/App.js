@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import { DataProvider } from './context/DataContext'
 import Dashboard from './components/dashboard/Dashboard'
 import ProjectBoard from './components/projectBoard/ProjectBoard'
+import TicketsBoard from './components/ticketsboard/TicketsBoard'
 import SignUp from './components/signup/SignUp'
 import SignIn from './components/SignIn'
 
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<SignIn />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/projectboard" element={<ProjectBoard />} />
+        <Route path="/ticketsboard" element={<TicketsBoard />} />
         <Route path="/signup" element={<SignUp />} />
       </Routes>
     </DataProvider>

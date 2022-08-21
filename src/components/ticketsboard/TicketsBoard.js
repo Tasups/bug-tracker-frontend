@@ -9,7 +9,7 @@ import ProjectTicketComments from '../projectBoard/ProjectTicketComments'
 const TicketsBoard = () => {
 
   const {
-    ticketsForDescription,
+    ticketForDescription,
     comments,
     commentChange,
     addNewComment,
@@ -21,9 +21,9 @@ const TicketsBoard = () => {
       <ProjectHeader />
       <SideNav />
       <div className="ticketsboard-container">
-        {/* <ProjectTicketDescription
-          ticketsForDescription={ticketsForDescription}
-        /> */}
+        <ProjectTicketDescription
+          ticketForDescription={ticketForDescription}
+        />
         <div className="ticketsboard-comments">
           <ProjectTicketComments
             comments={comments}

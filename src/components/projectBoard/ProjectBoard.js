@@ -19,14 +19,14 @@ const ProjectBoard = () => {
     newTicketTitle,
     newTicketDesc,
     newTicketAuthor, 
-    newTicketStatus,
-    newTicketPriority, 
-    newTicketType,
-    newTicketETA,
-    parentID,
+    // newTicketStatus,
+    // newTicketPriority, 
+    // newTicketType,
+    // newTicketETA,
+    // parentID,
     toggleAddTicketModal,
     handleTicketCancel,
-    dateConversion,
+    //dateConversion,
     commentChange,
     ticketTitleChange,
     ticketDescChange,
@@ -130,6 +130,7 @@ const ProjectBoard = () => {
             />
             <ProjectTicketDescription 
               ticketForDescription={ticketForDescription}
+              handleTicketClick={handleTicketClick}
             />
           </div>
           <div className="projectboard-desc-and-comments">

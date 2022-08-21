@@ -21,7 +21,7 @@ export const DataProvider = ({ children }) => {
   
   // PROJECTBOARD STATES -------------------------------------------
   
-  const [contributors, setContributors] = useState(projectsData)
+  const [contributors, setContributors] = useState(projectsData) 
   const [tickets, setTickets] = useState(ticketsData)
   const [ticketForDescription, setTicketForDescription] = useState(tickets[0])
   const [comments, setComments] = useState(ticketsData[0].comments)
@@ -177,8 +177,12 @@ export const DataProvider = ({ children }) => {
       date: dateConversion(),
       id: uuidv4(),
     }
-    setComments([...comments, newTicketComment])
-    setNewComment("");
+    if (newComment.length <= 0) {
+      return
+    } else if (newComment.length > 0) {
+      setComments([...comments, newTicketComment]);
+      setNewComment("");
+    }
     // eslint-disable-next-line
     const ticketToUpdate = tickets.filter((ticket) => ticket.id === parentID);
     // eslint-disable-next-line
