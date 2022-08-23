@@ -6,11 +6,13 @@ const ProjectTicketDescription = (props) => {
     <section className="ticketsdetails-container">
       <div className="ticketsdetails-title">
         <h4>Selected Ticket Details</h4>
-        <button>
-          <Link className="ticketsdetails-link" to="/ticketsboard">
-            Go To Ticket
-          </Link>
-        </button>
+       
+          <button style={{marginRight: "0.5rem"}}>
+            <Link className="ticketsdetails-link" to="/ticketsboard">
+              Go To Ticket
+            </Link>
+          </button> 
+
       </div>
       <div className="ticketsdetails-info">
         <div className="item-a ticketsdetails-infocard">

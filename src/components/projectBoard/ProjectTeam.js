@@ -5,7 +5,7 @@ const ProjectTeam = (props) => {
     <section className="projectteam-container">
         <div className="projectteam-title">
           <h4>Team</h4>
-          <button>Edit</button>
+          <button style={{margin: "1rem", padding: "0.5rem"}}>Edit</button>
         </div>
         <div className="projectteam-table">
           <table>

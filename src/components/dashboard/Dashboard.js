@@ -1,5 +1,5 @@
-import { useState } from 'react'
-//import DataContext from '../../context/DataContext'
+import { useContext } from 'react'
+import DataContext from '../../context/DataContext'
 import SideNav from '../SideNav'
 import Header from '../Header'
 import ProjectCard from './ProjectCard'
@@ -7,92 +7,37 @@ import TixByPriority from './TixByPriority'
 import TixByType from './TixByType'
 import TixByStatus from './TixByStatus'
 
-import { issues } from '../../data/projectData';
-
 const Dashboard = () => {
-  // can useContext to import data from db
-  // const [ data, setData ] = useContext(DataContext);
-
-  const [open, setOpen] = useState(false);
-  const [projects, setProjects] = useState(issues);
-  const [newProjectTitle, setNewProjectTitle] = useState("");
-  const [newDescription, setNewDescription] = useState("");
-  const [newContributors, setNewContributors] = useState("");
-
-  /*
-  GET PROJECTS BASED UPON THE USER ID
-  useEffect(() => {
-    const fetchPlaces = async () => {
-      try {
-        const responseData = await sendRequest(
-          `http://localhost:5000/api/places/user/${userId}`
-        );
-        setLoadedPlaces(responseData.places);
-      } catch (err) {}
-    };
-    fetchPlaces();
-  }, [sendRequest, userId]);
-
-  */
-
-  const toggleAddProjectModal = () => {
-    setOpen((prev) => !prev);
-  };
-
-  const projectChange = (e) => {
-    setNewProjectTitle(e.target.value);
-  };
-
-  const descriptionChange = (e) => {
-    setNewDescription(e.target.value);
-  };
-
-  const contributorsChange = (e) => {
-    setNewContributors(e.target.value);
-  };
-
-  const addNewProject = (e) => {
-    e.preventDefault();
-    const newProject = {
-      key: newProjectTitle,
-      projectTitle: newProjectTitle,
-      description: newDescription,
-      contributors: newContributors,
-    };
-    setProjects([...projects, newProject]);
-    setNewProjectTitle("");
-    setNewDescription("");
-    setNewContributors("");
-    toggleAddProjectModal();
-  };
-
-  const handleCancel = () => {
-    setNewProjectTitle("");
-    setNewDescription("");
-    setNewContributors("");
-    toggleAddProjectModal();
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    addNewProject(e);
-  };
-
+  
+  const {
+    open, 
+    projects, 
+    newProjTitle,
+    newProjDescription,
+    newProjContributors,
+    toggleAddProjectModal,
+    handleProjCancel,
+    handleProjSubmit,
+    projectChange,
+    projDescChange, 
+    projContributorsChange
+  } = useContext(DataContext)
+  
   return (
     <>
-      <Header projects={projects[0].contributors} />
+      <Header />
       <SideNav />
       <main className="dashboard-container">
         {open && (
           <section className="dashboard-project-modal">
             <h2>Add A New Project</h2>
-            <form onSubmit={handleSubmit} autoComplete="off">
+            <form onSubmit={handleProjSubmit} autoComplete="off">
               <label htmlFor="projectname">Project Name: </label>
               <input
                 type="text"
                 id="projectname"
                 name="projectname"
-                value={newProjectTitle}
+                value={newProjTitle}
                 onChange={projectChange}
                 required
               />
@@ -101,8 +46,8 @@ const Dashboard = () => {
                 type="text"
                 id="description"
                 name="description"
-                value={newDescription}
-                onChange={descriptionChange}
+                value={newProjDescription}
+                onChange={projDescChange}
                 required
               />
               {/* the following input will need to be dynamic to capture all available contributors*/}
@@ -111,15 +56,15 @@ const Dashboard = () => {
                 type="text"
                 id="contributors"
                 name="contributors"
-                value={newContributors}
-                onChange={contributorsChange}
+                value={newProjContributors}
+                onChange={projContributorsChange}
                 required
               />
               <div className="dashboard-project-modal-btns">
                 <button className="submit-modalBtn" type="submit">
                   Submit
                 </button>
-                <button className="cancel-modalBtn" onClick={handleCancel}>
+                <button className="cancel-modalBtn" onClick={handleProjCancel}>
                   Cancel
                 </button>
               </div>
