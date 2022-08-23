@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect } from 'react'
 import { issues } from '../data/projectData';
-import projectsData from '../data/contributorsData'
+import contributorsData from '../data/contributorsData'
 import ticketsData from '../data/ticketsData'
 
 const { v4: uuidv4 } = require('uuid');
@@ -20,7 +20,7 @@ export const DataProvider = ({ children }) => {
   // PROJECTBOARD STATES -------------------------------------------
 
   // eslint-disable-next-line
-  const [contributors, setContributors] = useState(projectsData);
+  const [contributors, setContributors] = useState(contributorsData);
   const [tickets, setTickets] = useState(ticketsData);
   const [ticketForDescription, setTicketForDescription] = useState(tickets[0]);
   const [comments, setComments] = useState(ticketsData[0].comments);
@@ -198,6 +198,14 @@ export const DataProvider = ({ children }) => {
     setComments(newComments.comments);
     setParentID(id);
   };
+  
+  // ADMIN FUNCTIONS -----------------------------------------------
+  
+  const deleteContributor = (e, id) => {
+    e.preventDefault()
+    const newContributorsList = contributors.filter((contributor => contributor.id !== id))
+    setContributors(newContributorsList)
+  }
 
   return (
     <DataContext.Provider
@@ -240,6 +248,7 @@ export const DataProvider = ({ children }) => {
         ticketPriorityChange,
         ticketTypeChange,
         ticketETAChange,
+        deleteContributor
       }}
     >
       {children}

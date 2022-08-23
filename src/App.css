@@ -781,6 +781,11 @@ html,body {
   padding: 0.5rem 0.5rem;
 }
 
+.projectteam-table th:last-of-type {
+  text-align: right;
+  padding-right: 3.25rem;
+}
+
 .projectteam-table tr {
   border-bottom: 1px solid rgba(230, 230, 230, 1);
 }
@@ -1300,4 +1305,74 @@ html,body {
 
 .faEdit-btn {
   font-size: 1.05rem;
+}
+
+.personnel-container {
+  margin: 1rem;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  -webkit-box-shadow: 5px 5px 15px 3px rgba(0,0,0,0.36); 
+  box-shadow: 5px 5px 15px 3px rgba(0,0,0,0.36);
+  min-width: 43%;
+  max-height: 20rem;
+  overflow: hidden;
+}
+
+.personnel-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.personnel-title h4 {
+  padding: 0 1rem;
+}
+
+.personnel-title button {
+  background-color: rgba(36,27,242, 1);
+  color: white;
+  font-weight: bold;
+  padding: 0 1rem;
+  margin: 1rem;
+  border: 3px solid rgba(36,27,242, 1);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.personnel-title button:hover {
+  background-color: rgba(36,27,242, 0.8);
+  border: 3px solid rgba(36,27,242, 0.8);
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+}
+
+.personnel-table table {
+  margin: 0.4rem auto;
+  text-align: center;
+  border-collapse: collapse;
+  font-size: 0.9em;
+  min-width: 100%;
+}
+
+.personnel-table th {
+  text-align: left;
+  background-color: rgba(36,27,242, 0.15);
+  font-weight: bold;
+}
+
+.personnel-table td {
+  text-align: left;
+}
+
+.personnel-table th, .personnel-table td {
+  padding: 0.5rem 0.5rem;
+}
+
+.personnel-table tr {
+  border-bottom: 1px solid rgba(230, 230, 230, 1);
+}
+
+.personnel-table tr:last-of-type {
+  border-bottom: 4px solid rgba(36,27,242, 0.15);
 }

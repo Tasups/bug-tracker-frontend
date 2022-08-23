@@ -8,7 +8,8 @@ import Personnel from './Personnel'
 const Admin = () => {
   
   const {
-    contributors
+    contributors,
+    deleteContributor
   } = useContext(DataContext)
   
   return(
@@ -16,7 +17,10 @@ const Admin = () => {
       <ProjectHeader />
       <SideNav />
       <div className="admin-container">
-         <Personnel contributors={contributors}/>
+        <Personnel 
+          contributors={contributors}
+          deleteContributor={deleteContributor}
+        />
       </div>
      
     </>
