@@ -201,11 +201,53 @@ export const DataProvider = ({ children }) => {
   
   // ADMIN FUNCTIONS -----------------------------------------------
   
+  const [newContributorName, setNewContributorName] = useState("");
+  const [newContributorEmail, setNewContributorEmail] = useState("");
+  const [newContributorPhone, setNewContributorPhone] = useState("");
+  const [newContributorRole, setNewContributorRole] = useState("");
+  
+  const contributorNameChange = (e) => {
+    setNewTicketTitle(e.target.value);
+  };
+
+  const contributorEmailChange = (e) => {
+    setNewContributorEmail(e.target.value);
+  };
+
+  const contributorPhoneChange = (e) => {
+    setNewContributorPhone(e.target.value);
+  };
+
+  const contributorRoleChange = (e) => {
+    const newStatus = e.target.value;
+    setNewContributorRole(newStatus);
+  };
+  
+  const toggleAddContributor = () => {
+    setOpen((prev) => !prev);
+  };
+  
   const deleteContributor = (e, id) => {
     e.preventDefault()
     const newContributorsList = contributors.filter((contributor => contributor.id !== id))
     setContributors(newContributorsList)
   }
+  
+  const addNewContributor = (e) => {
+    e.preventDefault();
+    const newContributor = {
+      name: newContributorName,
+      email: newContributorEmail,
+      phone: newContributorPhone,
+      role: newContributorRole,
+    };
+    setContributors([...contributors, newContributor]);
+    setNewContributorName("");
+    setNewContributorEmail("");
+    setNewContributorPhone("");
+    setNewContributorRole("");
+    toggleAddContributor();
+  };
 
   return (
     <DataContext.Provider
@@ -248,7 +290,16 @@ export const DataProvider = ({ children }) => {
         ticketPriorityChange,
         ticketTypeChange,
         ticketETAChange,
-        deleteContributor
+        deleteContributor,
+        newContributorName,
+        newContributorEmail,
+        newContributorPhone,
+        newContributorRole,
+        contributorNameChange,
+        contributorEmailChange,
+        contributorPhoneChange,
+        contributorRoleChange,
+        addNewContributor
       }}
     >
       {children}

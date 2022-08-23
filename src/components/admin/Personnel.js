@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
 const ProjectTeam = (props) => {
   
@@ -8,7 +9,9 @@ const ProjectTeam = (props) => {
     <section className="personnel-container">
       <div className="personnel-title">
           <h4>Personnel</h4>
-          <button style={{margin: "1rem", padding: "0.5rem"}}>Edit</button>
+          <button onClick={props.toggleAddNewContributor}>
+            <FontAwesomeIcon className="faPlus-btn" icon={faPlus} />
+          </button>
         </div>
         <div className="personnel-table">
           <table>
