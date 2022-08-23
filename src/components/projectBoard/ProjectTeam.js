@@ -4,10 +4,7 @@ const ProjectTeam = (props) => {
   return(
     <section className="projectteam-container">
         <div className="projectteam-title">
-          <h4>Personnel</h4>
-          {/*
-            EDIT PERSONNEL SHOULD BE RENDERED DYNAMICALLY IS USER IS ADMIN
-          */}
+          <h4>Team</h4>
           <button style={{margin: "1rem", padding: "0.5rem"}}>Edit</button>
         </div>
         <div className="projectteam-table">
@@ -18,6 +15,10 @@ const ProjectTeam = (props) => {
                 <th>Email</th>
                 <th>Phone</th>
               </tr>
+            </tbody>
+          </table>
+          <table className="projectteam-td">
+            <tbody>
               {props.data?.map((person) => (
                 <tr key={person.name}>
                   <td>{person.name}</td>
