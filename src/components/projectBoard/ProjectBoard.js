@@ -16,7 +16,6 @@ const ProjectBoard = () => {
   
   const [open, setOpen] = useState(false)
   // eslint-disable-next-line
-  
   const [projects, setProjects] = useState(projectsData)
   const [tickets, setTickets] = useState(ticketsData)
   const [ticketForDescription, setTicketForDescription] = useState(tickets[0])
