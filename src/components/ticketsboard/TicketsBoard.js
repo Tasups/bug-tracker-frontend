@@ -3,6 +3,7 @@ import DataContext from '../../context/DataContext'
 
 import ProjectHeader from '../projectBoard/ProjectHeader'
 import SideNav from '../SideNav'
+import ProjectTeam from '../projectBoard/ProjectTeam'
 import ProjectTicketDescription from '../projectBoard/ProjectTicketDescription'
 import TicketsComments from './TicketsComments'
 
@@ -12,6 +13,7 @@ const TicketsBoard = () => {
     ticketForDescription,
     comments,
     commentChange,
+    contributors,
     addNewComment,
     newComment,
   } = useContext(DataContext);
@@ -21,8 +23,11 @@ const TicketsBoard = () => {
       <ProjectHeader />
       <SideNav />
       <div className="ticketsboard-container">
-        <div className="ticketsboard-tixfordesc">
-          <ProjectTicketDescription
+        <div className="projectboard-team-and-tickets">
+          <ProjectTeam
+            data={contributors}
+          />
+          <ProjectTicketDescription 
             ticketForDescription={ticketForDescription}
           />
         </div>
