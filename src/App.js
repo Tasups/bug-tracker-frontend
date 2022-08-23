@@ -6,6 +6,9 @@ import TicketsBoard from './components/ticketsboard/TicketsBoard'
 import SignUp from './components/signup/SignUp'
 import SignIn from './components/SignIn'
 
+import projectsData from './data/contributorsData'
+import ticketsData from './data/ticketsData'
+
 import './App.css'
 
 function App() {

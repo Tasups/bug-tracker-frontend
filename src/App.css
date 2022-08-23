@@ -797,7 +797,8 @@ html,body {
   -webkit-box-shadow: 5px 5px 15px 3px rgba(0,0,0,0.36); 
   box-shadow: 5px 5px 15px 3px rgba(0,0,0,0.36);
   max-width: 43%;
-  max-height: 26rem;
+  max-height: 25rem;
+  overflow: hidden;
 }
 
 .projecttickets-title {
@@ -1011,6 +1012,7 @@ html,body {
 }
 
 .ticketsdetails-title button {
+  text-decoration: none;
   background-color: rgba(36,27,242, 1);
   color: white;
   margin: 0 1rem;
@@ -1119,6 +1121,7 @@ html,body {
   box-shadow: 5px 5px 15px 3px rgba(0,0,0,0.36);
   max-width: 50%;
   max-height: 26rem;
+  overflow: hidden;
 }
 
 .ticketcomments-title {
@@ -1262,4 +1265,3 @@ html,body {
   box-sizing: border-box;
   font-size: 1rem;
 }
-

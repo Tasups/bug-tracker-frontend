@@ -12,7 +12,7 @@ const ProjectTicketDescription = (props) => {
               Go To Ticket
             </Link>
           </button> 
-        
+
       </div>
       <div className="ticketsdetails-info">
         <div className="item-a ticketsdetails-infocard">
