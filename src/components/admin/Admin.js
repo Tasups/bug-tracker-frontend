@@ -8,6 +8,7 @@ import Personnel from './Personnel'
 const Admin = () => {
   
   const {
+    open,
     contributors,
     deleteContributor
   } = useContext(DataContext)
@@ -20,6 +21,7 @@ const Admin = () => {
         <Personnel 
           contributors={contributors}
           deleteContributor={deleteContributor}
+          open={open}
         />
       </div>
      

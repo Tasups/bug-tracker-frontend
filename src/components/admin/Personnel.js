@@ -6,7 +6,7 @@ const ProjectTeam = (props) => {
   
   return(
     <section className="personnel-container">
-        <div className="personnel-title">
+      <div className="personnel-title">
           <h4>Personnel</h4>
           <button style={{margin: "1rem", padding: "0.5rem"}}>Edit</button>
         </div>
