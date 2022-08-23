@@ -39,6 +39,7 @@ const ProjectBoard = () => {
     addNewComment,
     handleTicketClick
   } = useContext(DataContext)
+
   
   return(
     <>
