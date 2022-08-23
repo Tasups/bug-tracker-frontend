@@ -21,7 +21,6 @@ const Admin = () => {
         <Personnel 
           contributors={contributors}
           deleteContributor={deleteContributor}
-          open={open}
         />
       </div>
      
