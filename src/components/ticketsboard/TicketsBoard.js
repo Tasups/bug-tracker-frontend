@@ -42,7 +42,6 @@ const TicketsBoard = () => {
       </div>
     </>
   );
-
 }
 
 export default TicketsBoard

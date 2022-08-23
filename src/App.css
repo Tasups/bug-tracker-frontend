@@ -1265,3 +1265,37 @@ html,body {
   box-sizing: border-box;
   font-size: 1rem;
 }
+
+/* ADMIN **********************************************************/
+
+.admin-container {
+  position: absolute;
+  left: 16vw;
+  width: 84vw;
+  min-height: 80vh;
+  background-color: rgb(240,242,245);
+  margin: 0;
+}
+
+/* PERSONNEL ******************************************************/
+
+.personnel-trashbtn {
+  background-color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.faTrash-btn {
+  color: #EE2604;
+  font-size: 1.05rem;
+}
+
+.personnel-editbtn {
+  background-color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.faEdit-btn {
+  font-size: 1.05rem;
+}
