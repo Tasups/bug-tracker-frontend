@@ -201,13 +201,15 @@ export const DataProvider = ({ children }) => {
   
   // ADMIN FUNCTIONS -----------------------------------------------
   
+  const [openAddContributor, setOpenAddContributor] = useState(false)
+  const [openEditContributor, setOpenEditContributor] =useState(false)
   const [newContributorName, setNewContributorName] = useState("");
   const [newContributorEmail, setNewContributorEmail] = useState("");
   const [newContributorPhone, setNewContributorPhone] = useState("");
   const [newContributorRole, setNewContributorRole] = useState("");
   
   const contributorNameChange = (e) => {
-    setNewTicketTitle(e.target.value);
+    setNewContributorName(e.target.value);
   };
 
   const contributorEmailChange = (e) => {
@@ -224,8 +226,12 @@ export const DataProvider = ({ children }) => {
   };
   
   const toggleAddContributor = () => {
-    setOpen((prev) => !prev);
+    setOpenAddContributor((prev) => !prev);
   };
+  
+  const toggleEditContributor = () => {
+    setOpenEditContributor((prev) => !prev)
+  }
   
   const deleteContributor = (e, id) => {
     e.preventDefault()
@@ -248,7 +254,28 @@ export const DataProvider = ({ children }) => {
     setNewContributorRole("");
     toggleAddContributor();
   };
-
+  
+  const addNewContributorCancel = (e) => {
+    setNewContributorName("");
+    setNewContributorEmail("");
+    setNewContributorPhone("");
+    setNewContributorRole("");
+    toggleAddContributor();
+  }
+  
+  const editContributor = (id) => {
+    const editedContributors = contributors.map(contributor => {
+      if (id === contributor.id) {
+        return { ...contributor, email: newContributorEmail, phone: newContributorPhone, role: newContributorRole
+        }
+      } return contributors
+      })
+    setContributors(editedContributors)
+    toggleEditContributor()
+  }
+  
+  
+  
   return (
     <DataContext.Provider
       value={{
@@ -299,7 +326,13 @@ export const DataProvider = ({ children }) => {
         contributorEmailChange,
         contributorPhoneChange,
         contributorRoleChange,
-        addNewContributor
+        addNewContributor,
+        editContributor,
+        openAddContributor,
+        openEditContributor,
+        toggleAddContributor,
+        toggleEditContributor,
+        addNewContributorCancel
       }}
     >
       {children}
