@@ -34,7 +34,7 @@ const ProjectTeam = (props) => {
                   <td>
                     <button 
                       className="personnel-editbtn"
-                      onClick={(e) => props.toggleEditContributor}
+                      onClick={(e) => props.toggleEditContributor(e, person.id)}
                     >
                       <FontAwesomeIcon className="faEdit-btn" icon={faPenToSquare} />
                     </button>

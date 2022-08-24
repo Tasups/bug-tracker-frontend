@@ -239,6 +239,18 @@ export const DataProvider = ({ children }) => {
     setContributors(newContributorsList)
   }
   
+  const editContributor = (e, id) => {
+    e.preventDefault()
+    const editedContributors = contributors.map(contributor => {
+      if (id === contributor.id) {
+        return { ...contributor, name: newContributorName, email: newContributorEmail, phone: newContributorPhone, role: newContributorRole
+        }
+      } return contributors
+      })
+    setContributors(editedContributors)
+    toggleEditContributor()
+  }
+  
   const addNewContributor = (e) => {
     e.preventDefault();
     const newContributor = {
@@ -262,18 +274,6 @@ export const DataProvider = ({ children }) => {
     setNewContributorRole("");
     toggleAddContributor();
   }
-  
-  const editContributor = (id) => {
-    const editedContributors = contributors.map(contributor => {
-      if (id === contributor.id) {
-        return { ...contributor, email: newContributorEmail, phone: newContributorPhone, role: newContributorRole
-        }
-      } return contributors
-      })
-    setContributors(editedContributors)
-    toggleEditContributor()
-  }
-  
   
   
   return (
