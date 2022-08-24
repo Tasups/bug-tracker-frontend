@@ -1,14 +1,18 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
 const ProjectTeam = (props) => {
   
   return(
+    <>
     <section className="personnel-container">
       <div className="personnel-title">
           <h4>Personnel</h4>
-          <button style={{margin: "1rem", padding: "0.5rem"}}>Edit</button>
+          <button onClick={(e) => props.toggleAddContributor()}>
+            <FontAwesomeIcon className="faPlus-btn" icon={faPlus} />
+          </button>
         </div>
         <div className="personnel-table">
           <table>
@@ -26,11 +30,11 @@ const ProjectTeam = (props) => {
                   <td>{person.name}</td>
                   <td>{person.email}</td>
                   <td>{person.phone}</td>
-                  <td>{person.id}</td>
+                  <td>{person.role}</td>
                   <td>
                     <button 
                       className="personnel-editbtn"
-                      onClick={(e) => alert("put the edit function here!")}
+                      onClick={(e) => props.toggleEditContributor}
                     >
                       <FontAwesomeIcon className="faEdit-btn" icon={faPenToSquare} />
                     </button>
@@ -49,6 +53,7 @@ const ProjectTeam = (props) => {
           </table>
           </div>
         </section>
+        </>
     )
 }
 

@@ -201,12 +201,81 @@ export const DataProvider = ({ children }) => {
   
   // ADMIN FUNCTIONS -----------------------------------------------
   
+  const [openAddContributor, setOpenAddContributor] = useState(false)
+  const [openEditContributor, setOpenEditContributor] =useState(false)
+  const [newContributorName, setNewContributorName] = useState("");
+  const [newContributorEmail, setNewContributorEmail] = useState("");
+  const [newContributorPhone, setNewContributorPhone] = useState("");
+  const [newContributorRole, setNewContributorRole] = useState("");
+  
+  const contributorNameChange = (e) => {
+    setNewContributorName(e.target.value);
+  };
+
+  const contributorEmailChange = (e) => {
+    setNewContributorEmail(e.target.value);
+  };
+
+  const contributorPhoneChange = (e) => {
+    setNewContributorPhone(e.target.value);
+  };
+
+  const contributorRoleChange = (e) => {
+    const newStatus = e.target.value;
+    setNewContributorRole(newStatus);
+  };
+  
+  const toggleAddContributor = () => {
+    setOpenAddContributor((prev) => !prev);
+  };
+  
+  const toggleEditContributor = () => {
+    setOpenEditContributor((prev) => !prev)
+  }
+  
   const deleteContributor = (e, id) => {
     e.preventDefault()
     const newContributorsList = contributors.filter((contributor => contributor.id !== id))
     setContributors(newContributorsList)
   }
-
+  
+  const addNewContributor = (e) => {
+    e.preventDefault();
+    const newContributor = {
+      name: newContributorName,
+      email: newContributorEmail,
+      phone: newContributorPhone,
+      role: newContributorRole,
+    };
+    setContributors([...contributors, newContributor]);
+    setNewContributorName("");
+    setNewContributorEmail("");
+    setNewContributorPhone("");
+    setNewContributorRole("");
+    toggleAddContributor();
+  };
+  
+  const addNewContributorCancel = (e) => {
+    setNewContributorName("");
+    setNewContributorEmail("");
+    setNewContributorPhone("");
+    setNewContributorRole("");
+    toggleAddContributor();
+  }
+  
+  const editContributor = (id) => {
+    const editedContributors = contributors.map(contributor => {
+      if (id === contributor.id) {
+        return { ...contributor, email: newContributorEmail, phone: newContributorPhone, role: newContributorRole
+        }
+      } return contributors
+      })
+    setContributors(editedContributors)
+    toggleEditContributor()
+  }
+  
+  
+  
   return (
     <DataContext.Provider
       value={{
@@ -248,7 +317,22 @@ export const DataProvider = ({ children }) => {
         ticketPriorityChange,
         ticketTypeChange,
         ticketETAChange,
-        deleteContributor
+        deleteContributor,
+        newContributorName,
+        newContributorEmail,
+        newContributorPhone,
+        newContributorRole,
+        contributorNameChange,
+        contributorEmailChange,
+        contributorPhoneChange,
+        contributorRoleChange,
+        addNewContributor,
+        editContributor,
+        openAddContributor,
+        openEditContributor,
+        toggleAddContributor,
+        toggleEditContributor,
+        addNewContributorCancel
       }}
     >
       {children}

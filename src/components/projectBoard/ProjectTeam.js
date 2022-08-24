@@ -20,7 +20,7 @@ const ProjectTeam = (props) => {
           <table className="projectteam-td">
             <tbody>
               {props.data?.map((person) => (
-                <tr key={person.name}>
+                <tr key={person.id}>
                   <td>{person.name}</td>
                   <td>{person.email}</td>
                   <td>{person.phone}</td>
