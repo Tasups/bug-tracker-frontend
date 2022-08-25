@@ -91,14 +91,14 @@ html,body {
 }
 
 .auth-card input {
-  width: 80%;
-  padding: 0.5rem 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-  font-size: 1.2rem;
+  width: 80% !important;
+  padding: 0.5rem 20px !important;
+  margin: 8px 0 !important;
+  display: inline-block !important;
+  border: 1px solid #ccc !important;
+  border-radius: 5px !important;
+  box-sizing: border-box !important;
+  font-size: 1.2rem !important;
 }
 
 .auth-card button {

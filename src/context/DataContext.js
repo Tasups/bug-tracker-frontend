@@ -233,10 +233,45 @@ export const DataProvider = ({ children }) => {
     setOpenEditContributor((prev) => !prev)
   }
   
-  const deleteContributor = (e, id) => {
-    e.preventDefault()
-    const newContributorsList = contributors.filter((contributor => contributor.id !== id))
+  const deleteContributor = (id) => {
+    const newContributorsList = contributors.filter((contributor) => contributor.id !== id)
     setContributors(newContributorsList)
+  }
+  
+/*  
+  const editTask = (id, newTitle, newDesc) => {
+    const editedTasks = tasks.map(task => {
+      if (id === task.id) {
+        return { ...task, title: newTitle, desc: newDesc }
+      } 
+      return task;
+    })
+    setTasks(editedTasks);
+  }
+  */
+  // const editContributor = (id) => {
+  //   //this will be an array except for the object that has the id
+  // const uneditedContributorList = contributors.filter((contributor) => contributor.id !== id)
+  // // the object that is to be edited
+  // let contributorToBeEdited = contributors.filter((contributor) => contributor.id === id)
+  // contributorToBeEdited = {
+  //   ...contributorToBeEdited, name: newContributorName, email: newContributorEmail, phone: newContributorPhone, role: newContributorRole
+  // }
+  // const editedContributorList = uneditedContributorList.push(contributorToBeEdited)
+  // setContributors(editedContributorList)
+  // toggleEditContributor()
+  // }
+  
+
+  const editContributor = (id) => {
+    const editedContributors = contributors.map(contributor => {
+      if (id === contributor.id) {
+        return { ...contributor, name: newContributorName, email: newContributorEmail, phone: newContributorPhone, role: newContributorRole
+        }
+      } return contributors
+      })
+    setContributors(editedContributors)
+    toggleEditContributor()
   }
   
   const addNewContributor = (e) => {
@@ -255,25 +290,13 @@ export const DataProvider = ({ children }) => {
     toggleAddContributor();
   };
   
-  const addNewContributorCancel = (e) => {
+  const addNewContributorCancel = () => {
     setNewContributorName("");
     setNewContributorEmail("");
     setNewContributorPhone("");
     setNewContributorRole("");
     toggleAddContributor();
   }
-  
-  const editContributor = (id) => {
-    const editedContributors = contributors.map(contributor => {
-      if (id === contributor.id) {
-        return { ...contributor, email: newContributorEmail, phone: newContributorPhone, role: newContributorRole
-        }
-      } return contributors
-      })
-    setContributors(editedContributors)
-    toggleEditContributor()
-  }
-  
   
   
   return (
@@ -341,3 +364,7 @@ export const DataProvider = ({ children }) => {
 }
 
 export default DataContext;
+
+// useEffect(() => {
+//     localStorage.setItem('tasks', JSON.stringify(tasks))
+//   }, [tasks])

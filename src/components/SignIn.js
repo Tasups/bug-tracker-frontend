@@ -24,6 +24,7 @@ const SignIn = () => {
               placeholder="email"
               // value={lastName}
               // onChange={lastNameChange}
+              className="signin-email"
               required
             />
             <label htmlFor="password" hidden="hidden">Password: </label>
