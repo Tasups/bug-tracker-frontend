@@ -4,6 +4,7 @@ import { faPenToSquare } from '@fortawesome/free-solid-svg-icons'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
 const ProjectTeam = (props) => {
+
   
   return(
     <>
@@ -42,7 +43,7 @@ const ProjectTeam = (props) => {
                   <td> 
                     <button 
                       className="personnel-trashbtn"
-                      onClick={(e) => props.deleteContributor(e, person.id)}
+                      onClick={(e) => props.deleteContributor(person.id)}
                     >
                       <FontAwesomeIcon className="faTrash-btn" icon={faTrash}/>
                     </button>
