@@ -34,6 +34,7 @@ const ProjectTeam = (props) => {
                   <td>{person.role}</td>
                   <td>
                     <button 
+                      type="button"
                       className="personnel-editbtn"
                       onClick={(e) => props.toggleEditContributor(e, person.id)}
                     >
@@ -42,6 +43,7 @@ const ProjectTeam = (props) => {
                   </td>
                   <td> 
                     <button 
+                       type="button"
                       className="personnel-trashbtn"
                       onClick={(e) => props.deleteContributor(person.id)}
                     >

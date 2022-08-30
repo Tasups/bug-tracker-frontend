@@ -133,7 +133,11 @@ const Admin = () => {
                 <button className="submit-modalBtn" type="submit">
                   Submit
                 </button>
-                <button className="cancel-modalBtn" onClick={toggleEditContributor}>
+                <button 
+                  className="cancel-modalBtn" 
+                  onClick={toggleEditContributor}
+                  type="button"
+                >
                   Cancel
                 </button>
               </div>

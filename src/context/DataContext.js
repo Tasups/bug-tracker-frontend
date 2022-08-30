@@ -263,12 +263,13 @@ export const DataProvider = ({ children }) => {
   // }
   
 
-  const editContributor = (id) => {
+  const editContributor = (e, id) => {
+    e.preventDefault()
     const editedContributors = contributors.map(contributor => {
       if (id === contributor.id) {
         return { ...contributor, name: newContributorName, email: newContributorEmail, phone: newContributorPhone, role: newContributorRole
         }
-      } return contributors
+      } return contributor
       })
     setContributors(editedContributors)
     toggleEditContributor()
