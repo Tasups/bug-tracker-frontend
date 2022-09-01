@@ -19,7 +19,6 @@ export const DataProvider = ({ children }) => {
 
   // PROJECTBOARD STATES -------------------------------------------
 
-  // eslint-disable-next-line
   const [contributors, setContributors] = useState(contributorsData);
   const [tickets, setTickets] = useState(ticketsData);
   const [ticketForDescription, setTicketForDescription] = useState(tickets[0]);
@@ -207,6 +206,7 @@ export const DataProvider = ({ children }) => {
   const [newContributorEmail, setNewContributorEmail] = useState("");
   const [newContributorPhone, setNewContributorPhone] = useState("");
   const [newContributorRole, setNewContributorRole] = useState("");
+  const [contributorToEdit, setContributorToEdit] = useState(0);
   
   const contributorNameChange = (e) => {
     setNewContributorName(e.target.value);
@@ -228,6 +228,12 @@ export const DataProvider = ({ children }) => {
   const toggleAddContributor = () => {
     setOpenAddContributor((prev) => !prev);
   };
+  
+  const selectContributorToEdit = (id) => {
+    console.log(id)
+    setContributorToEdit(id)
+    console.log(contributorToEdit)
+  }
   
   const toggleEditContributor = () => {
     setOpenEditContributor((prev) => !prev)
@@ -263,10 +269,10 @@ export const DataProvider = ({ children }) => {
   // }
   
 
-  const editContributor = (e, id) => {
+  const editContributor = (e, contributorToEdit) => {
     e.preventDefault()
-    const editedContributors = contributors.map(contributor => {
-      if (id === contributor.id) {
+    const editedContributors = contributors.map((contributor) => {
+      if (contributorToEdit === contributor.id) {
         return { ...contributor, name: newContributorName, email: newContributorEmail, phone: newContributorPhone, role: newContributorRole
         }
       } return contributor
@@ -356,6 +362,8 @@ export const DataProvider = ({ children }) => {
         openEditContributor,
         toggleAddContributor,
         toggleEditContributor,
+        contributorToEdit,
+        selectContributorToEdit,
         addNewContributorCancel
       }}
     >

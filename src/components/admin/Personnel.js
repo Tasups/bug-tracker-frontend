@@ -4,7 +4,12 @@ import { faPenToSquare } from '@fortawesome/free-solid-svg-icons'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
 const ProjectTeam = (props) => {
-
+  
+  const handleClick = (id) => {
+    console.log(id)
+    props.selectContributorToEdit(id)
+    props.toggleEditContributor()
+  }
   
   return(
     <>
@@ -36,7 +41,7 @@ const ProjectTeam = (props) => {
                     <button 
                       type="button"
                       className="personnel-editbtn"
-                      onClick={(e) => props.toggleEditContributor(e, person.id)}
+                      onClick={() => handleClick(person.id)}
                     >
                       <FontAwesomeIcon className="faEdit-btn" icon={faPenToSquare} />
                     </button>

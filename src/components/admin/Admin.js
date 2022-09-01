@@ -23,6 +23,8 @@ const Admin = () => {
     openEditContributor,
     toggleAddContributor,
     toggleEditContributor,
+    contributorToEdit,
+    selectContributorToEdit,
     addNewContributorCancel
   } = useContext(DataContext)
   
@@ -151,11 +153,12 @@ const Admin = () => {
           deleteContributor={deleteContributor}
           toggleAddContributor={toggleAddContributor}
           toggleEditContributor={toggleEditContributor}
+          selectContributorToEdit={selectContributorToEdit}
         />
+        <h1>{contributorToEdit}</h1>
       </div>
-     
+      
     </>
-    
     )
 }
 
