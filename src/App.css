@@ -1378,7 +1378,7 @@ html,body {
 }
 
 .addcontributor-modal {
-  z-idnex: 100;
+  z-index: 100;
   width: 20rem;
   height: 20rem;
   background-color: blue;

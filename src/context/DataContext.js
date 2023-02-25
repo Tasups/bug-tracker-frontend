@@ -19,7 +19,6 @@ export const DataProvider = ({ children }) => {
 
   // PROJECTBOARD STATES -------------------------------------------
 
-  // eslint-disable-next-line
   const [contributors, setContributors] = useState(contributorsData);
   const [tickets, setTickets] = useState(ticketsData);
   const [ticketForDescription, setTicketForDescription] = useState(tickets[0]);
@@ -149,13 +148,14 @@ export const DataProvider = ({ children }) => {
       id: uuidv4(),
       comments: [
         {
-          comment: "Please make comments to describe the ticket",
+          comment: "Please make comments to describe the ticket. Be sure to be clear about the specifics in the comment as well as use good behavior.",
           id: uuidv4(),
           author: "Jason Whisnant",
           date: dateConversion(),
         },
       ],
     };
+
     setTickets([...tickets, newTicket]);
     setNewTicketTitle("");
     setNewTicketDesc("");
