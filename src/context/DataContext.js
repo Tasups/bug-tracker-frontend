@@ -1,9 +1,13 @@
+import React from 'react'
 import { createContext, useState, useEffect } from 'react'
-import { issues } from '../data/projectData';
+// import { issues } from '../data/projectData';
 import contributorsData from '../data/contributorsData'
 import ticketsData from '../data/ticketsData'
+import axios from 'axios'
 
 const { v4: uuidv4 } = require('uuid');
+
+const API_URL_BASE = "http://localhost:5000"
 
 const DataContext = createContext({})
 
@@ -11,7 +15,7 @@ export const DataProvider = ({ children }) => {
   // DASHBOARD STATES ----------------------------------------------
 
   const [open, setOpen] = useState(false);
-  const [projects, setProjects] = useState(issues);
+  const [projects, setProjects] = useState([]);
   const [newProjTitle, setNewProjTitle] = useState("");
   const [newProjDescription, setNewProjDescription] = useState("");
   const [newProjContributors, setNewProjContributors] = useState("");
@@ -33,9 +37,15 @@ export const DataProvider = ({ children }) => {
   const [newTicketETA, setNewTicketETA] = useState("");
   const [parentID, setParentID] = useState("");
 
-  useEffect(() => {
-    setProjects(issues);
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get(`http://localhost:5000/api/v1/projects/dashboard`)
+  //     .then((res) => {
+  //       setProjects(res.data);
+  //       console.log(res);
+  //     })
+  //     .catch((err) => console.log(err));
+  // }, [projects, setProjects])
 
   // DASHBOARD FUNCTIONS -------------------------------------------
 
@@ -63,6 +73,10 @@ export const DataProvider = ({ children }) => {
       description: newProjDescription,
       contributors: newProjContributors,
     };
+    axios
+      .post(`${API_URL_BASE}/api/v1/projects/dashboard`, newProject)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
     setProjects([...projects, newProject]);
     setNewProjTitle("");
     setNewProjDescription("");
@@ -305,6 +319,7 @@ export const DataProvider = ({ children }) => {
         data,
         setData,
         projects,
+        setProjects,
         open,
         setOpen,
         handleProjCancel,
@@ -355,7 +370,8 @@ export const DataProvider = ({ children }) => {
         openEditContributor,
         toggleAddContributor,
         toggleEditContributor,
-        addNewContributorCancel
+        addNewContributorCancel,
+        
       }}
     >
       {children}

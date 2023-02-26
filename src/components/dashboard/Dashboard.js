@@ -1,4 +1,6 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
+import axios from 'axios'
+
 import DataContext from '../../context/DataContext'
 import SideNav from '../SideNav'
 import Header from '../Header'
@@ -12,6 +14,7 @@ const Dashboard = () => {
   const {
     open, 
     projects, 
+    setProjects,
     newProjTitle,
     newProjDescription,
     newProjContributors,
@@ -22,7 +25,16 @@ const Dashboard = () => {
     projDescChange, 
     projContributorsChange
   } = useContext(DataContext)
-  
+
+   useEffect(() => {
+     axios
+       .get(`http://localhost:5000/api/v1/projects/dashboard`)
+       .then((res) => {
+         setProjects(res.data.projects);
+       })
+       .catch((err) => console.log(err));
+   }, []);
+
   return (
     <>
       <Header />
