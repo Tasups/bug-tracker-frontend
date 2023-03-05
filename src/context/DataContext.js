@@ -1,5 +1,5 @@
 import React from 'react'
-import { createContext, useState, useEffect } from 'react'
+import { createContext, useState } from 'react'
 // import { issues } from '../data/projectData';
 import contributorsData from '../data/contributorsData'
 import ticketsData from '../data/ticketsData'
@@ -23,6 +23,7 @@ export const DataProvider = ({ children }) => {
 
   // PROJECTBOARD STATES -------------------------------------------
 
+  const [project, setProject] = useState({})
   const [contributors, setContributors] = useState(contributorsData);
   const [tickets, setTickets] = useState(ticketsData);
   const [ticketForDescription, setTicketForDescription] = useState(tickets[0]);
@@ -95,6 +96,12 @@ export const DataProvider = ({ children }) => {
     e.preventDefault();
     addNewProject(e);
   };
+
+  const selectProject = (pid) => {
+    const selectedProject = projects.filter(project => project._id === pid)
+    setProject(selectedProject);
+    console.log(selectedProject);
+  }
 
   // PROJECTBOARD FUNCTIONS ----------------------------------------
 
@@ -198,7 +205,7 @@ export const DataProvider = ({ children }) => {
     // eslint-disable-next-line
     const ticketToUpdate = tickets.filter((ticket) => ticket.id === parentID);
     // eslint-disable-next-line
-    const updatedTicket = ticketToUpdate[0].comments.push(newTicketComment);
+    //const updatedTicket = ticketToUpdate[0].comments.push(newTicketComment);
     //setTickets([...tickets, updatedTicket]);
   };
 
@@ -320,6 +327,9 @@ export const DataProvider = ({ children }) => {
         setData,
         projects,
         setProjects,
+        project,
+        setProject,
+        selectProject,
         open,
         setOpen,
         handleProjCancel,

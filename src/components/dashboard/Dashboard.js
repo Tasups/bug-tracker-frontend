@@ -15,6 +15,9 @@ const Dashboard = () => {
     open, 
     projects, 
     setProjects,
+    project,
+    setProject,
+    selectProject,
     newProjTitle,
     newProjDescription,
     newProjContributors,
@@ -33,7 +36,7 @@ const Dashboard = () => {
          setProjects(res.data.projects);
        })
        .catch((err) => console.log(err));
-   }, []);
+   }, [setProjects]);
 
   return (
     <>
@@ -87,6 +90,7 @@ const Dashboard = () => {
         <div className={open ? "grayed-out" : undefined}>
           <ProjectCard
             projects={projects}
+            selectProject={selectProject}
             handleClick={toggleAddProjectModal}
           />
           <div className="dashboard-card-container">

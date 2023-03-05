@@ -1,4 +1,6 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
+// import axios from 'axios'
+
 import DataContext from '../../context/DataContext'
 import SideNav from '../SideNav'
 import ProjectHeader from './ProjectHeader'
@@ -11,6 +13,7 @@ const ProjectBoard = () => {
   
   const {
     open,
+    project,
     contributors,
     tickets,
     ticketForDescription,
@@ -26,7 +29,7 @@ const ProjectBoard = () => {
     // parentID,
     toggleAddTicketModal,
     handleTicketCancel,
-    //dateConversion,
+    // dateConversion,
     commentChange,
     ticketTitleChange,
     ticketDescChange,
@@ -40,10 +43,14 @@ const ProjectBoard = () => {
     handleTicketClick
   } = useContext(DataContext)
 
+  useEffect(() => {
+    console.log(project[0])
+  }, [project])
+
   
   return(
     <>
-      <ProjectHeader />
+      <ProjectHeader title={project[0].projectTitle} description={project[0].description} />
       <SideNav />
       
       <div className="projectboard-container">
@@ -126,6 +133,7 @@ const ProjectBoard = () => {
         <div className={open ? "grayed-out" : undefined}>
         
           <div className="projectboard-team-and-tickets">
+
             <ProjectTeam
               data={contributors}
             />

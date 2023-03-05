@@ -20,11 +20,19 @@ const ProjectCard = (props) => {
             {props.projects?.map((project) => (
               <tr key={project.projectTitle}>
                 <td>
-                  <button className="projectcard-link-btn">
-                    <Link to="/projectboard"
+                  <button
+                    className="projectcard-link-btn"
+                    onClick={() => props.selectProject(project._id)}
+                  >
+                    <Link
+                      to="/projectboard"
+                      // to={`/projectboard/${project._id}`}
                       /* use this instead when routing dynamically; use the project id  {`/projectboard/${props.id}`} */
-                      className="projectcard-link">
+                      className="projectcard-link"
+                    >
                       {project.projectTitle}
+                      __
+                      {project._id}
                     </Link>
                   </button>
                 </td>

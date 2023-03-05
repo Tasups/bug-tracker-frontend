@@ -1,5 +1,7 @@
 
-const ProjectHeader = () => {
+const ProjectHeader = (props) => {
+
+  const {title, description} = props
   
   return(
     <header className="header-container">
@@ -10,8 +12,8 @@ const ProjectHeader = () => {
       */
       } 
       <div className="header-project-titles">
-        <h4>Project Title</h4>
-        <h4>this is a placeholder for the description</h4>
+        <h4>{title}</h4>
+        <h4>{description}</h4>
       </div>
     </header>
     )
