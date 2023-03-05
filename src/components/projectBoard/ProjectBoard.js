@@ -1,5 +1,5 @@
-import { useContext, useEffect } from 'react'
-// import axios from 'axios'
+import { useContext, useEffect, useState } from 'react'
+import axios from 'axios'
 
 import DataContext from '../../context/DataContext'
 import SideNav from '../SideNav'
@@ -10,10 +10,10 @@ import ProjectTicketDescription from './ProjectTicketDescription'
 import ProjectTicketComments from './ProjectTicketComments'
 
 const ProjectBoard = () => {
-  
   const {
     open,
     project,
+    // setProject,
     contributors,
     tickets,
     ticketForDescription,
@@ -21,9 +21,9 @@ const ProjectBoard = () => {
     newComment,
     newTicketTitle,
     newTicketDesc,
-    newTicketAuthor, 
+    newTicketAuthor,
     // newTicketStatus,
-    // newTicketPriority, 
+    // newTicketPriority,
     // newTicketType,
     // newTicketETA,
     // parentID,
@@ -40,40 +40,49 @@ const ProjectBoard = () => {
     ticketETAChange,
     addNewTicket,
     addNewComment,
-    handleTicketClick
-  } = useContext(DataContext)
+    handleTicketClick,
+  } = useContext(DataContext);
+  
+  const [projectData, setProjectData] = useState({})
 
   useEffect(() => {
-    console.log(project[0])
-  }, [project])
+    axios
+      .get(`http://localhost:5000/api/v1/projects/dashboard/${project[0]._id}`)
+      .then((res) => {
+        setProjectData(res.data.project);
+      })
+      .catch((err) => console.log(err));
+  }, [project, setProjectData]);
 
-  
-  return(
+  return (
     <>
-      <ProjectHeader title={project[0].projectTitle} description={project[0].description} />
+      <ProjectHeader
+        title={projectData.projectTitle}
+        description={projectData.description}
+        pid={projectData._id}
+      />
       <SideNav />
-      
+
       <div className="projectboard-container">
-  
-      { open && 
+        {open && (
           <section className="projectboard-ticket-modal">
             <h2>Add A New Ticket</h2>
             <form onSubmit={addNewTicket} autoComplete="off">
               <label htmlFor="ticket-title">Ticket Title: </label>
-              <input 
-                type="text" 
-                id="ticket-title" 
-                name="ticket-title" 
+              <input
+                type="text"
+                id="ticket-title"
+                name="ticket-title"
                 value={newTicketTitle}
                 onChange={ticketTitleChange}
                 required
               />
               <label htmlFor="description">Description: </label>
-              <input 
-                type="text" 
-                id="description" 
-                name="description" 
-                value={newTicketDesc} 
+              <input
+                type="text"
+                id="description"
+                name="description"
+                value={newTicketDesc}
                 onChange={ticketDescChange}
                 required
               />
@@ -81,22 +90,22 @@ const ProjectBoard = () => {
                 the following input will need to be pulled from whoever the user is - set by authContext
               */}
               <label htmlFor="author">Contributors: </label>
-              <input 
-                type="text" 
-                id="author" 
-                name="author" 
+              <input
+                type="text"
+                id="author"
+                name="author"
                 value={newTicketAuthor}
                 onChange={ticketAuthorChange}
                 required
               />
-              
+
               <label htmlFor="status">Status: </label>
               <select name="status" onChange={ticketStatusChange}>
                 <option value="">select status</option>
                 <option value="open">open</option>
                 <option value="closed">closed</option>
               </select>
-              
+
               <label htmlFor="priority">Priority: </label>
               <select name="priority" onChange={ticketPriorityChange}>
                 <option value="">select priority</option>
@@ -105,15 +114,15 @@ const ProjectBoard = () => {
                 <option value="important">important</option>
                 <option value="critical">critical</option>
               </select>
-              
+
               <label htmlFor="type">Type: </label>
               <select name="type" onChange={ticketTypeChange}>
                 <option value="">select type</option>
                 <option value="bug">bug</option>
                 <option value="feature">feature</option>
                 <option value="issue">issue</option>
-              </select> 
-              
+              </select>
+
               <label htmlFor="eta">ETA: </label>
               <select name="eta" onChange={ticketETAChange}>
                 <option value="">select time due</option>
@@ -121,29 +130,32 @@ const ProjectBoard = () => {
                 <option value="one week">one week</option>
                 <option value="one month">one month</option>
                 <option value="one quarter">one quarter</option>
-              </select> 
+              </select>
               <div className="projectboard-ticket-modal-btns">
-                <button className="submit-modalBtn" type="submit">Submit</button>
-                <button className="cancel-modalBtn" onClick={handleTicketCancel}>Cancel</button>
+                <button className="submit-modalBtn" type="submit">
+                  Submit
+                </button>
+                <button
+                  className="cancel-modalBtn"
+                  onClick={handleTicketCancel}
+                >
+                  Cancel
+                </button>
               </div>
             </form>
           </section>
-        }
-        
-        <div className={open ? "grayed-out" : undefined}>
-        
-          <div className="projectboard-team-and-tickets">
+        )}
 
-            <ProjectTeam
-              data={contributors}
-            />
-            <ProjectTicketDescription 
+        <div className={open ? "grayed-out" : undefined}>
+          <div className="projectboard-team-and-tickets">
+            <ProjectTeam data={contributors} />
+            <ProjectTicketDescription
               ticketForDescription={ticketForDescription}
               handleTicketClick={handleTicketClick}
             />
           </div>
           <div className="projectboard-desc-and-comments">
-            <ProjectTickets 
+            <ProjectTickets
               tickets={tickets}
               handleCancel={handleTicketCancel}
               toggleAddTicketModal={toggleAddTicketModal}
@@ -156,12 +168,10 @@ const ProjectBoard = () => {
               newComment={newComment}
             />
           </div>
-          
         </div>
-        
       </div>
     </>
-    )
+  );
 }
 
 export default ProjectBoard;

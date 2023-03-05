@@ -156,6 +156,11 @@ export const DataProvider = ({ children }) => {
     setNewTicketETA(newETA);
   };
 
+  // axios
+  //   .post(`${API_URL_BASE}/api/v1/projects/dashboard`, newProject)
+  //   .then((res) => console.log(res))
+  //   .catch((err) => console.log(err));
+
   const addNewTicket = (e) => {
     e.preventDefault();
     const newTicket = {
@@ -166,7 +171,6 @@ export const DataProvider = ({ children }) => {
       priority: newTicketPriority,
       type: newTicketType,
       eta: newTicketETA,
-      id: uuidv4(),
       comments: [
         {
           comment: "Please make comments to describe the ticket. Be sure to be clear about the specifics in the comment as well as use good behavior.",
@@ -176,6 +180,11 @@ export const DataProvider = ({ children }) => {
         },
       ],
     };
+
+    axios
+      .post(`${API_URL_BASE}/api/v1/projects/dashboard/`, newTicket)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err))
 
     setTickets([...tickets, newTicket]);
     setNewTicketTitle("");

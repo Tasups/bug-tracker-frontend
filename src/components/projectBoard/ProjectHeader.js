@@ -1,7 +1,7 @@
 
 const ProjectHeader = (props) => {
 
-  const {title, description} = props
+  const {title, description, pid} = props
   
   return(
     <header className="header-container">
@@ -14,6 +14,7 @@ const ProjectHeader = (props) => {
       <div className="header-project-titles">
         <h4>{title}</h4>
         <h4>{description}</h4>
+        <h4>ID: {pid}</h4>
       </div>
     </header>
     )
