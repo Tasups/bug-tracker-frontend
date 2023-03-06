@@ -29,9 +29,9 @@ const ProjectTickets = (props) => {
                  onClick={(e) => props.handleTicketClick(e, ticket.id)}
                  key={ticket.id}
                >
-                 <td>{ticket.title}</td>
-                 <td>{ticket.description}</td>
-                 <td>{ticket.author}</td>
+                 <td key={ticket.title}>{ticket.title}</td>
+                 <td key={`${ticket.description}.1`}>{ticket.description}</td>
+                 <td key={ticket?.author}>{ticket.author}</td>
                </tr>
              ))}
            </tbody>

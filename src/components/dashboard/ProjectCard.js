@@ -26,8 +26,7 @@ const ProjectCard = (props) => {
                   >
                     <Link
                       to="/projectboard"
-                      // to={`/projectboard/${project._id}`}
-                      /* use this instead when routing dynamically; use the project id  {`/projectboard/${props.id}`} */
+                      //to={`http://localhost:3000/api/v1/projects/dashboard/${project._id}`}
                       className="projectcard-link"
                     >
                       {project.projectTitle}

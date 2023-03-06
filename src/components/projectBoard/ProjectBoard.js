@@ -67,7 +67,7 @@ const ProjectBoard = () => {
         {open && (
           <section className="projectboard-ticket-modal">
             <h2>Add A New Ticket</h2>
-            <form onSubmit={addNewTicket} autoComplete="off">
+            <form onSubmit={addNewTicket(projectData._id)} autoComplete="off">
               <label htmlFor="ticket-title">Ticket Title: </label>
               <input
                 type="text"

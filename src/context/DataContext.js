@@ -161,8 +161,7 @@ export const DataProvider = ({ children }) => {
   //   .then((res) => console.log(res))
   //   .catch((err) => console.log(err));
 
-  const addNewTicket = (e) => {
-    e.preventDefault();
+  const addNewTicket = (id) => {
     const newTicket = {
       title: newTicketTitle,
       description: newTicketDesc,
@@ -182,7 +181,7 @@ export const DataProvider = ({ children }) => {
     };
 
     axios
-      .post(`${API_URL_BASE}/api/v1/projects/dashboard/`, newTicket)
+      .post(`${API_URL_BASE}/api/v1/projects/dashboard/${id}`, newTicket)
       .then((res) => console.log(res))
       .catch((err) => console.log(err))
 

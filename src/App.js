@@ -16,7 +16,8 @@ function App() {
       <Routes>
         <Route path="/" element={<SignIn />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/projectboard" element={<ProjectBoard />} />
+        {/* to={`http://localhost:3000/api/v1/projects/dashboard/${project._id}`}*/}
+        <Route path="/projectboard" element={<ProjectBoard />} exact />
         <Route path="/ticketsboard" element={<TicketsBoard />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/signup" element={<SignUp />} />
