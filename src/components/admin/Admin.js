@@ -155,7 +155,6 @@ const Admin = () => {
           toggleEditContributor={toggleEditContributor}
           selectContributorToEdit={selectContributorToEdit}
         />
-        <h1>{contributorToEdit}</h1>
       </div>
       
     </>
