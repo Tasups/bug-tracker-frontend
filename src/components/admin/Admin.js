@@ -23,7 +23,7 @@ const Admin = () => {
     openEditContributor,
     toggleAddContributor,
     toggleEditContributor,
-    contributorToEdit,
+    // contributorToEdit,
     selectContributorToEdit,
     addNewContributorCancel
   } = useContext(DataContext)
