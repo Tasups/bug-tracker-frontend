@@ -1126,7 +1126,7 @@ html,body {
   border-radius: 5px;
   -webkit-box-shadow: 5px 5px 15px 3px rgba(0,0,0,0.36); 
   box-shadow: 5px 5px 15px 3px rgba(0,0,0,0.36);
-  max-width: 50%;
+  width: 50%;
   max-height: 26rem;
   overflow: hidden;
 }

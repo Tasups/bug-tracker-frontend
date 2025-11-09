@@ -23,6 +23,8 @@ const Admin = () => {
     openEditContributor,
     toggleAddContributor,
     toggleEditContributor,
+    // contributorToEdit,
+    selectContributorToEdit,
     addNewContributorCancel
   } = useContext(DataContext)
   
@@ -133,7 +135,11 @@ const Admin = () => {
                 <button className="submit-modalBtn" type="submit">
                   Submit
                 </button>
-                <button className="cancel-modalBtn" onClick={toggleEditContributor}>
+                <button 
+                  className="cancel-modalBtn" 
+                  onClick={toggleEditContributor}
+                  type="button"
+                >
                   Cancel
                 </button>
               </div>
@@ -147,11 +153,11 @@ const Admin = () => {
           deleteContributor={deleteContributor}
           toggleAddContributor={toggleAddContributor}
           toggleEditContributor={toggleEditContributor}
+          selectContributorToEdit={selectContributorToEdit}
         />
       </div>
-     
+      
     </>
-    
     )
 }
 
