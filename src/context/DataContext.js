@@ -7,11 +7,36 @@ const { v4: uuidv4 } = require('uuid');
 
 const DataContext = createContext({})
 
+// ---------- Persistence config ---------------------------------
+const STORAGE_KEY = 'bugbank_state_v1';
+
+const loadFromStorage = () => {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return null;
+    return JSON.parse(raw);
+  } catch (err) {
+    console.error('Failed to load state from localStorage', err);
+    return null;
+  }
+};
+
+const saveToStorage = (stateObj) => {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(stateObj));
+  } catch (err) {
+    console.error('Failed to save state to localStorage', err);
+  }
+};
+
+
 export const DataProvider = ({ children }) => {
   // DASHBOARD STATES ----------------------------------------------
 
   const [open, setOpen] = useState(false);
-  const [projects, setProjects] = useState(issues);
+  // try to load persisted state (projects, contributors, tickets, comments)
+  const stored = typeof window !== 'undefined' ? loadFromStorage() : null;
+  const [projects, setProjects] = useState(stored?.projects || issues);
   const [newProjTitle, setNewProjTitle] = useState("");
   const [newProjDescription, setNewProjDescription] = useState("");
   const [newProjContributors, setNewProjContributors] = useState("");
@@ -19,10 +44,14 @@ export const DataProvider = ({ children }) => {
 
   // PROJECTBOARD STATES -------------------------------------------
 
-  const [contributors, setContributors] = useState(contributorsData);
-  const [tickets, setTickets] = useState(ticketsData);
-  const [ticketForDescription, setTicketForDescription] = useState(tickets[0]);
-  const [comments, setComments] = useState(ticketsData[0].comments);
+  const [contributors, setContributors] = useState(stored?.contributors || contributorsData);
+  const [tickets, setTickets] = useState(stored?.tickets || ticketsData);
+  const [ticketForDescription, setTicketForDescription] = useState(
+    stored?.ticketForDescription || (tickets && tickets[0]) || ticketsData[0]
+  );
+  const [comments, setComments] = useState(
+    stored?.comments || (tickets && tickets[0] && tickets[0].comments) || ticketsData[0].comments
+  );
   const [newComment, setNewComment] = useState("");
   const [newTicketTitle, setNewTicketTitle] = useState("");
   const [newTicketDesc, setNewTicketDesc] = useState("");
@@ -33,9 +62,20 @@ export const DataProvider = ({ children }) => {
   const [newTicketETA, setNewTicketETA] = useState("");
   const [parentID, setParentID] = useState("");
 
+  // Persist key pieces of state to localStorage (debounced)
   useEffect(() => {
-    setProjects(issues);
-  }, []);
+    const payload = {
+      version: 1,
+      projects,
+      contributors,
+      tickets,
+      ticketForDescription,
+      comments,
+    };
+
+    const handler = setTimeout(() => saveToStorage(payload), 800);
+    return () => clearTimeout(handler);
+  }, [projects, contributors, tickets, ticketForDescription, comments]);
 
   // DASHBOARD FUNCTIONS -------------------------------------------
 
@@ -305,6 +345,26 @@ export const DataProvider = ({ children }) => {
     setNewContributorRole("");
     toggleAddContributor();
   }
+
+  // ---------- Persistence helpers exposed to the app ------------
+  const clearPersistence = () => {
+    try {
+      localStorage.removeItem(STORAGE_KEY);
+      // also reset in-memory state to defaults
+      setProjects(issues);
+      setContributors(contributorsData);
+      setTickets(ticketsData);
+      setTicketForDescription(ticketsData[0]);
+      setComments(ticketsData[0].comments);
+    } catch (err) {
+      console.error('Failed to clear persistence', err);
+    }
+  };
+
+  const restoreDefaults = () => {
+    // alias for clearPersistence for now (keeps intent explicit)
+    clearPersistence();
+  };
   
   
   return (
@@ -365,7 +425,10 @@ export const DataProvider = ({ children }) => {
         toggleEditContributor,
         contributorToEdit,
         selectContributorToEdit,
-        addNewContributorCancel
+        addNewContributorCancel,
+        // persistence helpers
+        clearPersistence,
+        restoreDefaults
       }}
     >
       {children}
